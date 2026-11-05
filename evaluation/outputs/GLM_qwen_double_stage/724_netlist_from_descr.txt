@@ -1,0 +1,7 @@
+Rs n1 n1 VALUE
+Ce n1 VDD
+Rz n1 n2 VALUE
+Cc n2 Vout
+M9 n2 n1 VDD VDD NMOS
+RL n2 0 VALUE
+CL Vout 0

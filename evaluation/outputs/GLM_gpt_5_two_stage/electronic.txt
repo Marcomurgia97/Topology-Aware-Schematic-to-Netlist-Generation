@@ -1,0 +1,13 @@
+Antenna n_antenna 0 ANTENNA
+L1 n_antenna 0 VALUE
+C1 n_antenna 0 VALUE
+D1 n_antenna 0 DIODE
+C2 n1 0 VALUE
+R1 n1 0 VALUE
+Q1 n2 n1 0 NPN
+R2 n2 0 VALUE
+T1 n2 0 n3 0 TRANSFORMER
+R3 n3 0 VALUE
+Q2 n4 n3 0 NPN
+R4 n4 Vcc VALUE
+Load n4 0 VALUE

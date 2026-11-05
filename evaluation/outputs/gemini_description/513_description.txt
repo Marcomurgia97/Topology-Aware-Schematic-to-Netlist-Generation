@@ -1,0 +1,45 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The schematic provides four explicitly labeled nets:
+    *   **VDD**: The positive supply voltage rail at the top.
+    *   **Vin**: The input voltage terminal on the left.
+    *   **Vout**: The output voltage terminal on the right.
+    *   **0**: The ground connection at the bottom of the circuit.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Node connecting M1 source, RS, and RF:** An unlabeled junction was identified connecting the source of transistor M1, the bottom terminal of resistor RF, and the top terminal of resistor RS. A check confirms this node is not directly connected to any labeled net (VDD, Vin, Vout, or 0). Therefore, it is a distinct electrical point.
+    *   **Assignment:** This node is assigned the unique name **n1**.
+
+3.  **Final Net Inventory:**
+    The verified list of nets for this circuit is: **VDD, Vin, Vout, 0, n1**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component M2:** This is a P-channel MOSFET (PMOS).
+    - **Analysis:**
+        - **Pin identification logic:** The MOSFET symbol consists of a gate pin on one side and two pins (source and drain) on the other. The source is identified by the arrow symbol. In this schematic, the top transistor (M2) has the arrow on the pin connected to the VDD rail. The arrow points inward towards the channel, identifying it as a PMOS device.
+        - **Pin Mapping:** Applying this logic: The **Gate** is connected to Vin. The **Source** (with arrow) is connected to VDD. The **Drain** is connected to Vout.
+    - **Final Connections:**
+        - Its **gate** is connected to the **Vin** net.
+        - Its **source** is connected to the **VDD** net.
+        - Its **drain** is connected to the **Vout** net.
+
+- **Component M1:** This is an N-channel MOSFET (NMOS).
+    - **Analysis:**
+        - **Pin identification logic:** Following the standard rule, the source is the pin with the arrow. For the bottom transistor (M1), the arrow is on the pin pointing downward. The arrow points outward from the channel, identifying it as an NMOS device.
+        - **Pin Mapping:** The **Gate** is connected to Vin. The **Drain** is connected to Vout. The **Source** (with arrow) is connected to net n1.
+    - **Final Connections:**
+        - Its **gate** is connected to the **Vin** net.
+        - Its **drain** is connected to the **Vout** net.
+        - Its **source** is connected to the **n1** net.
+
+- **Component RF:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the **Vout** net.
+        - The other terminal is connected to the **n1** net.
+
+- **Component RS:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the **n1** net.
+        - The other terminal is connected to the **0** (ground) net.

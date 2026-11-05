@@ -1,0 +1,52 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    -   **$V_{DD}$**: The positive voltage supply rail at the top of the circuit.
+    -   **$V_{in}$**: The input signal terminal on the left.
+    -   **$V_{out}$**: The output signal terminal on the right.
+    -   **0**: The ground reference connection at the bottom, indicated by standard ground symbols.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    -   **Verification of Input Node:** The junction connecting the input terminal, the top of resistor $R_G$, the gate of transistor $M_1$, and the gate of transistor $M_2$ is continuous. It is identified as net **$V_{in}$**.
+    -   **Verification of Output Node:** The junction connecting the output terminal, the bottom of resistor $R_D$, the drain of transistor $M_1$, and the drain of transistor $M_2$ is continuous. It is identified as net **$V_{out}$**.
+    -   **Verification of Supply Node:** The junction connecting the top rail, the top of resistor $R_D$, and the source of transistor $M_2$ is continuous. It is identified as net **$V_{DD}$**.
+    -   **Verification of Ground Node:** The junction connecting the bottom of resistor $R_G$, the source of transistor $M_1$, and the circuit ground symbols is continuous. It is identified as net **0**.
+    -   **Conclusion:** All circuit nodes are directly connected to labeled terminals. No new net names are required.
+
+3.  **Final Net Inventory:** $V_{DD}$, $V_{in}$, $V_{out}$, 0.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Resistor $R_G$**
+    -   **Description:** An input bias resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **$V_{in}$** net.
+        -   The other terminal is connected to **0** (ground).
+
+-   **Resistor $R_D$**
+    -   **Description:** A load resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **$V_{DD}$** net.
+        -   The other terminal is connected to the **$V_{out}$** net.
+
+-   **Transistor $M_1$**
+    -   **ID:** $M_1$
+    -   **Type:** NMOS Transistor.
+    -   **Analysis:**
+        -   **Pin Identification:** The symbol has a single gate pin on the left. On the right side, the bottom pin has an arrow pointing outwards, which identifies it as the Source. The remaining top pin is the Drain.
+        -   **Mapping:** Based on the schematic tracing, the Gate goes to the input, the Source goes to ground, and the Drain goes to the output.
+    -   **Final Connections:**
+        -   The **Gate** is connected to the **$V_{in}$** net.
+        -   The **Source** is connected to **0** (ground).
+        -   The **Drain** is connected to the **$V_{out}$** net.
+
+-   **Transistor $M_2$**
+    -   **ID:** $M_2$
+    -   **Type:** NMOS Transistor.
+    -   **Analysis:**
+        -   **Pin Identification:** The symbol has a single gate pin on the left. On the right side, the top pin has an arrow pointing outwards, which identifies it as the Source. The remaining bottom pin is the Drain. (Note: While the configuration with the Source at $V_{DD}$ is unusual for an NMOS, the visual symbol strictly depicts an N-channel device).
+        -   **Mapping:** The Gate connects to the input line. The Source connects to the top supply rail. The Drain connects to the output node.
+    -   **Final Connections:**
+        -   The **Gate** is connected to the **$V_{in}$** net.
+        -   The **Source** is connected to the **$V_{DD}$** net.
+        -   The **Drain** is connected to the **$V_{out}$** net.

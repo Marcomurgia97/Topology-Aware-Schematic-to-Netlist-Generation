@@ -1,0 +1,11 @@
+Mb1 vb vb 0 0 NMOS
+Mb2 vin vb 0 0 NMOS
+Mb3 vb vb VDD VDD PMOS
+Mb4 vin vb net_rs net_rs PMOS
+M9 vout vin VDD VDD PMOS
+M11 vout vb 0 0 NMOS
+RS VDD net_rs RS
+CE VDD vin CE
+RZ vin net_rc RZ
+CC net_rc vout CC
+CL vout 0 CL

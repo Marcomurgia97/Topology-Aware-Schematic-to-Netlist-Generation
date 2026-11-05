@@ -1,0 +1,5 @@
+R1 VDD X
+R2 VDD Y
+R2 n1 0
+M2 X X 0 0 NMOS
+M1 Y X n1 0 NMOS

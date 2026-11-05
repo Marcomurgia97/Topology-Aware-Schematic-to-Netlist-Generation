@@ -1,0 +1,5 @@
+R1 V_DD V_out R_D
+C1 V_out P C1
+C2 P 0 C2
+M1 N1 P 0 0 NMOS
+M2 V_out V_b N1 N1 NMOS

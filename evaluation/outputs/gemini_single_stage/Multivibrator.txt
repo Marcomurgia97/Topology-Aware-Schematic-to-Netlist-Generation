@@ -1,0 +1,10 @@
+R1 VCC Net_L1_Anode 470
+R2 VCC Net_Q2_Base 47k
+R3 VCC Net_Q1_Base 47k
+R4 VCC Net_L2_Anode 470
+D1 Net_L1_Anode Net_Q1_Collector LED
+D2 Net_L2_Anode Net_Q2_Collector LED
+C1 Net_Q1_Collector Net_Q2_Base 10u
+C2 Net_Q2_Collector Net_Q1_Base 10u
+Q1 Net_Q1_Collector Net_Q1_Base 0 NPN
+Q2 Net_Q2_Collector Net_Q2_Base 0 NPN

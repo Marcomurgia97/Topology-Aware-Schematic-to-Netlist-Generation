@@ -1,0 +1,93 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    -   **VPP**: The positive power supply rail indicated by the upward arrows at the top.
+    -   **vi1**: The input signal net on the left side, connected to the positive terminal of the voltage source labeled $v_{i1}$.
+    -   **vi2**: The input signal net on the right side, connected to the positive terminal of the voltage source labeled $v_{i2}$.
+    -   **vO1**: The output net on the left side, taken at the plate of the left vacuum tube.
+    -   **vO2**: The output net on the right side, taken at the plate of the right vacuum tube.
+    -   **0**: The ground reference, connected to the negative terminals of the input sources and the bottom of resistor $R_T$.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    -   **Left Grid Node:** The junction connecting the left input capacitor, the grid of the left tube, and the top of the left resistor $R_G$. This is a distinct node not connected to any labeled net. It is assigned the name **n1**.
+    -   **Right Grid Node:** The junction connecting the right input capacitor, the grid of the right tube, and the top of the right resistor $R_G$. This is a distinct node. It is assigned the name **n2**.
+    -   **Cathode Coupling Node:** The junction connecting the cathode of the left tube, the cathode of the right tube, and the top of resistor $R'_K$. This is a distinct node. It is assigned the name **n3**.
+    -   **Bias Junction Node:** The node connecting the bottom of the left resistor $R_G$, the bottom of the right resistor $R_G$, the bottom of resistor $R'_K$, and the top of resistor $R_T$. This is a distinct node. It is assigned the name **n4**.
+
+3.  **Final Net Inventory:** VPP, vi1, vi2, vO1, vO2, 0, n1, n2, n3, n4.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Voltage Source vi1 (Left Input)**
+    -   Type: AC Voltage Source.
+    -   **Final Connections:**
+        -   The positive terminal is connected to the **vi1** net.
+        -   The negative terminal is connected to **0** (ground).
+
+-   **Input Capacitor (Left)**
+    -   Type: Capacitor (unlabeled).
+    -   **Final Connections:**
+        -   One terminal is connected to the **vi1** net.
+        -   The other terminal is connected to the **n1** node.
+
+-   **Voltage Source vi2 (Right Input)**
+    -   Type: AC Voltage Source.
+    -   **Final Connections:**
+        -   The positive terminal is connected to the **vi2** net.
+        -   The negative terminal is connected to **0** (ground).
+
+-   **Input Capacitor (Right)**
+    -   Type: Capacitor (unlabeled).
+    -   **Final Connections:**
+        -   One terminal is connected to the **vi2** net.
+        -   The other terminal is connected to the **n2** node.
+
+-   **Vacuum Tube V1 (Left)**
+    -   Type: Triode.
+    -   **Final Connections:**
+        -   The **grid** (dashed line) is connected to the **n1** node.
+        -   The **plate** (anode, top flat line) is connected to the **vO1** net.
+        -   The **cathode** (bottom curved line) is connected to the **n3** node.
+
+-   **Vacuum Tube V2 (Right)**
+    -   Type: Triode.
+    -   **Final Connections:**
+        -   The **grid** (dashed line) is connected to the **n2** node.
+        -   The **plate** (anode, top flat line) is connected to the **vO2** net.
+        -   The **cathode** (bottom curved line) is connected to the **n3** node.
+
+-   **Resistor RL1**
+    -   Type: Resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **VPP** net.
+        -   The other terminal is connected to the **vO1** net.
+
+-   **Resistor RL2**
+    -   Type: Resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **VPP** net.
+        -   The other terminal is connected to the **vO2** net.
+
+-   **Resistor RG (Left)**
+    -   Type: Resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **n1** node.
+        -   The other terminal is connected to the **n4** node.
+
+-   **Resistor RG (Right)**
+    -   Type: Resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **n2** node.
+        -   The other terminal is connected to the **n4** node.
+
+-   **Resistor R'K**
+    -   Type: Resistor.
+    -   **Final Connections:**
+        -   The top terminal is connected to the **n3** node (common cathodes).
+        -   The bottom terminal is connected to the **n4** node.
+
+-   **Resistor RT**
+    -   Type: Resistor.
+    -   **Final Connections:**
+        -   The top terminal is connected to the **n4** node.
+        -   The bottom terminal is connected to **0** (ground).

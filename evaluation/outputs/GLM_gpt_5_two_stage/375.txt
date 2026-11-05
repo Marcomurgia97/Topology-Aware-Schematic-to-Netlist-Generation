@@ -1,0 +1,4 @@
+R2 n1 n6 VALUE
+L n2 n3 VALUE
+R1 n2 n3 VALUE
+Z1 n3 n4 n5 VALUE

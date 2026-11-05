@@ -1,0 +1,8 @@
+C1 Input Base VALUE
+R1 Vcc Base VALUE
+R2 Base 0 VALUE
+RL Vcc Collector VALUE
+Q1 Collector Base Emitter NPN
+RE Emitter 0 VALUE
+C2 Emitter 0 VALUE
+C3 Collector Output VALUE

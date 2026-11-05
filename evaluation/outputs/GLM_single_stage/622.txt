@@ -1,0 +1,6 @@
+R1 Vin Node_A
+M1 Node_C Node_A 0 0 NMOS
+R2 Node_A Node_B
+C1 Node_B 0
+R3 Node_B Node_C
+M2 V_DD Node_C Vb NMOS

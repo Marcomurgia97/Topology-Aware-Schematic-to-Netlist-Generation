@@ -1,0 +1,85 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The schematic provides several explicit labels.
+    -   **VDD**: The positive power supply rail running along the top.
+    -   **0**: The ground net, indicated by ground symbols at the bottom of the circuit.
+    -   **Vb**: A bias voltage net connected to the gates of transistors M6 and M7.
+    -   **Vout**: The output signal net.
+    -   **X**: An internal labeled node connecting the drain of M1, drain of M3, gate of M3, and gate of M4.
+    -   **Y**: An internal labeled node connecting the drain of M2, drain of M4, and gate of M5.
+    -   **Vin**: This label refers to the differential input. It consists of two distinct terminals:
+        -   **Vin_1**: The top input terminal connected to the gate of M1.
+        -   **Vin_2**: The bottom input terminal connected to the gate of M2.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    -   **Tail Node**: There is a junction connecting the source of M1, the source of M2, and the drain of M7. This node is not directly connected to any labeled net (it is separated from ground and VDD by transistors). This is a distinct net.
+    -   **Verification**: No other unlabeled junctions exist; all other connections align with the labeled nets above.
+
+3.  **Final Net Inventory:**
+    The complete list of verified nets is: **VDD**, **0** (Ground), **Vb**, **Vout**, **X**, **Y**, **Vin_1**, **Vin_2**, and **n1** (the newly identified tail node).
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: The symbol has a gate on the left. The right side has two pins; the bottom one has an arrow pointing outward, identifying it as the Source. The top pin is the Drain.
+        -   Pin Mapping: The Gate connects to the top input terminal `Vin_1`. The Source connects to the common tail node `n1`. The Drain connects to the node `X`.
+    -   **Final Connections:**
+        -   Gate: Connected to **Vin_1**.
+        -   Source: Connected to **n1**.
+        -   Drain: Connected to **X**.
+
+-   **Component M2:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: Gate is on the right. Left side has two pins; the bottom one has an outward arrow, identifying it as the Source. The top pin is the Drain.
+        -   Pin Mapping: The Gate connects to the bottom input terminal `Vin_2`. The Source connects to the common tail node `n1`. The Drain connects to the node `Y`.
+    -   **Final Connections:**
+        -   Gate: Connected to **Vin_2**.
+        -   Source: Connected to **n1**.
+        -   Drain: Connected to **Y**.
+
+-   **Component M3:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: Gate on the right. Left side source pin has an outward arrow. Drain is the top pin.
+        -   Pin Mapping: The Source connects to Ground (`0`). The Drain connects to node `X`. The Gate also connects to node `X` (making it diode-connected).
+    -   **Final Connections:**
+        -   Gate: Connected to **X**.
+        -   Source: Connected to **0**.
+        -   Drain: Connected to **X**.
+
+-   **Component M4:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: Gate on the left. Right side source pin has an outward arrow. Drain is the top pin.
+        -   Pin Mapping: The Source connects to Ground (`0`). The Drain connects to node `Y`. The Gate connects to node `X`.
+    -   **Final Connections:**
+        -   Gate: Connected to **X**.
+        -   Source: Connected to **0**.
+        -   Drain: Connected to **Y**.
+
+-   **Component M5:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: Gate on the left. Right side source pin has an outward arrow. Drain is the top pin.
+        -   Pin Mapping: The Source connects to Ground (`0`). The Drain connects to the output node `Vout`. The Gate connects to node `Y`.
+    -   **Final Connections:**
+        -   Gate: Connected to **Y**.
+        -   Source: Connected to **0**.
+        -   Drain: Connected to **Vout**.
+
+-   **Component M6:** This is a PMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: The symbol has an arrow on the source pin pointing inward (towards the channel). The source is the top pin connected to the supply rail.
+        -   Pin Mapping: The Source connects to `VDD`. The Drain connects to `Vout`. The Gate connects to the bias line `Vb`.
+    -   **Final Connections:**
+        -   Gate: Connected to **Vb**.
+        -   Source: Connected to **VDD**.
+        -   Drain: Connected to **Vout**.
+
+-   **Component M7:** This is a PMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: The symbol has an arrow on the source pin pointing inward. The source is the top pin connected to the supply rail.
+        -   Pin Mapping: The Source connects to `VDD`. The Drain connects to the tail node `n1`. The Gate connects to the bias line `Vb`.
+    -   **Final Connections:**
+        -   Gate: Connected to **Vb**.
+        -   Source: Connected to **VDD**.
+        -   Drain: Connected to **n1**.

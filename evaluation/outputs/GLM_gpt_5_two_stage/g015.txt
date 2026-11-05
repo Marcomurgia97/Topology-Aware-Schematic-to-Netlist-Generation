@@ -1,0 +1,10 @@
+C1 v_{i1} v_{i1} VALUE
+R1 v_{i1} n1 VALUE
+M1 v_{O1} v_{i1} n1 n1 NMOS
+R2 v_{O1} V_{PP} VALUE
+C2 v_{O2} v_{i2} VALUE
+R3 v_{i2} n3 VALUE
+M2 v_{O2} v_{i2} n3 n3 NMOS
+R4 v_{O2} V_{PP} VALUE
+R5 n1 n3 VALUE
+R6 n2 0 VALUE

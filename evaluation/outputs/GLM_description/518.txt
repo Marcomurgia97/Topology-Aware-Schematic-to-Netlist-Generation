@@ -1,0 +1,22 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are Vin, Vout, VDD, and 0 (ground).
+All unlabeled nodes are directly connected to labeled nets from step 1. Therefore, no new distinct nets are created.
+The final net inventory is: Vin, Vout, VDD, 0.
+
+**PHASE 2: Description of Components and Connections**
+- **Component RF:** This is a resistor.
+    - **Final Connections:**
+        - Its one end is connected to the 'Vin' node.
+        - Its other end is connected to the 'Vout' node.
+- **Component RD:** This is a resistor.
+    - **Final Connections:**
+        - Its one end is connected to the 'VDD' node.
+        - Its other end is connected to the 'Vout' node.
+- **Component M1:** This is a MOSFET.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: Gate is connected to Vin. Source is connected to 0. Drain is connected to Vout.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Vin' node.
+        - Its **source** and **bulk** are connected to 0 (ground).
+        - Its **drain** is connected to the 'Vout' node.<|end_of_box|>

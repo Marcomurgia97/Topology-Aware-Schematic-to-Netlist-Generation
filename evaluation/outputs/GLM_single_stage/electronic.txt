@@ -1,0 +1,12 @@
+D1 Antenna D1_node D
+C1 Antenna 0 VALUE
+L1 Antenna 0 VALUE
+C2 D1_node C2_node VALUE
+R1 C2_node 0 VALUE
+Q1 Q1_collector_node C2_node 0 0 NPN
+R2 Q1_collector_node T1_primary VALUE
+T1 T1_primary Q1_collector_node T1_secondary_node R3_node
+R3 T1_secondary_node 0 VALUE
+C3 T1_secondary_node Q2_base_node VALUE
+Q2 Q2_collector_node Q2_base_node 0 0 NPN
+R4 Q2_collector_node Vcc_positive VALUE

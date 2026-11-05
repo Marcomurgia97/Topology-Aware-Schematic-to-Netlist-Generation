@@ -1,0 +1,45 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    *   **VDD**: The positive power supply rail at the top.
+    *   **Vout**: The output terminal on the right.
+    *   **0**: The ground connection, indicated by ground symbols at the bottom of the schematic.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Gate/Drain Connection Check:** There is a node connecting the gate of transistor M9, the top of resistor $R_S$, and the bottom of capacitor $C_E$. A vertical wire extends downward from this junction and terminates directly onto the wire connecting the drain of M9 to the output. This T-junction indicates a direct electrical connection.
+    *   **Result:** Because of this connection, the Gate node and the Drain node are part of the same electrical net. Since the drain is connected to the labeled terminal **Vout**, the entire interconnected mesh (Gate, Drain, $R_S$ top, $C_E$ bottom, $R_L$ top, $C_L$ top) constitutes a single net: **Vout**.
+
+3.  **Assign Names and Finalize Inventory:**
+    *   No new unique names are required as all nodes map to the labeled nets.
+    *   **Final Net Inventory:** VDD, Vout, 0.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M9:** This is a PMOS transistor.
+    -   **Analysis:**
+        -   **Pin identification logic:** The MOSFET symbol has a single insulated gate pin on the left. On the right side, there are two vertical pins. The top pin has an arrow pointing inward towards the channel, which identifies it as the **Source** of a PMOS device (additionally confirmed by its connection to the positive supply VDD). The bottom pin is the **Drain**.
+        -   **Pin Mapping:** Based on the schematic traces, the Source is at VDD, and both the Gate and Drain are connected to the net Vout.
+    -   **Final Connections:**
+        -   Its **source** is connected to **VDD**.
+        -   Its **gate** is connected to **Vout**.
+        -   Its **drain** is connected to **Vout**. (Note: The device is diode-connected).
+
+-   **Component CE:** This is a capacitor.
+    -   **Final Connections:**
+        -   One terminal is connected to **VDD**.
+        -   The other terminal is connected to **Vout** (physically at the gate connection point).
+
+-   **Component RS:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to **Vout** (physically at the gate connection point).
+        -   The other terminal is connected to **0** (ground).
+
+-   **Component RL:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to **Vout** (physically at the drain/output node).
+        -   The other terminal is connected to **0** (ground).
+
+-   **Component CL:** This is a capacitor.
+    -   **Final Connections:**
+        -   One terminal is connected to **Vout** (physically at the drain/output node).
+        -   The other terminal is connected to **0** (ground).

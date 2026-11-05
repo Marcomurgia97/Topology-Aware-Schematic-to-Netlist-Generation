@@ -1,0 +1,10 @@
+R1 VPP vo1 RL1
+R2 VPP vo2 RL2
+R3 g1 bias RG
+R4 g2 bias RG
+R5 k bias RK_prime
+R6 bias 0 RT
+C1 vi1 g1 VALUE
+C2 vi2 g2 VALUE
+X1 vo1 g1 k TRIODE
+X2 vo2 g2 k TRIODE

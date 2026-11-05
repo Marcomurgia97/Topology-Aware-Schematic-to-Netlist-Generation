@@ -1,0 +1,9 @@
+Vin Vin 0 VALUE
+R1 Vin n1 VALUE
+Cin n1 X VALUE
+RS X 0 VALUE
+M1 Vout n_bias X X NMOS
+RD VDD Vout VALUE
+IB VDD n_bias VALUE
+MB n_bias n_bias n2 n2 NMOS
+RB n2 0 VALUE

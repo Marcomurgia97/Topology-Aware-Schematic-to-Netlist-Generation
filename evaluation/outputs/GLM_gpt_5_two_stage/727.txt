@@ -1,0 +1,10 @@
+Mb3 n1 n2 VDD VDD PMOS
+Mb4 n3 n2 n1 n1 PMOS
+Mb1 n2 n2 0 0 NMOS
+Mb2 n3 n2 0 0 NMOS
+M11 Vout n3 0 0 NMOS
+M9 Vout n4 VDD VDD PMOS
+Ce VDD n4 VALUE
+Cc n4 Vout VALUE
+Rz n4 Vout VALUE
+CL Vout 0 VALUE

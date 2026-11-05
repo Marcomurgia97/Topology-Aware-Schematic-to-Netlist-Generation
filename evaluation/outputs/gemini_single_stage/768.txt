@@ -1,0 +1,5 @@
+M1 Net_Drain_M1 Net_Gate_NMOS 0 0 NMOS
+M2 Net_Gate_PMOS Net_Gate_NMOS 0 0 NMOS
+M3 Net_Gate_PMOS Net_Gate_PMOS VDD VDD PMOS
+M4 Net_Gate_NMOS Net_Gate_PMOS VDD VDD PMOS
+Rs Net_Gate_NMOS Net_Drain_M1 Rs

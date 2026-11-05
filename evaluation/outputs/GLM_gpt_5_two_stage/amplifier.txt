@@ -1,0 +1,9 @@
+C1 Input n1 VALUE
+R1 Vcc n1 VALUE
+R2 n1 0 VALUE
+Vcc Vcc 0 VALUE
+RL Vcc n2 VALUE
+C3 n2 Output VALUE
+Q1 n2 n1 n2 NPN
+RE n2 0 VALUE
+C2 n2 0 VALUE

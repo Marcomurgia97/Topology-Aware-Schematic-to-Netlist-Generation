@@ -1,0 +1,82 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+The primary labeled nets are **VDD**, **Vin**, **Vout**, and **0** (ground).
+- **VDD**: The main positive power supply rail running horizontally across the top.
+- **Vin**: The input terminal on the left of the amplifier stage.
+- **Vout**: The output terminal on the right of the amplifier stage.
+- **0**: The ground reference, indicated by multiple ground symbols at the bottom of the schematic.
+
+Several important unlabeled nodes connecting multiple components were identified and verified to be distinct from the labeled nets:
+- **n1**: A bias voltage node connecting the drain and gate of Mb1, the drain of Mb3, and the gates of Mb2 and M11.
+- **n2**: A bias voltage node connecting the drain and gate of Mb4, the gate of Mb3, and the drain of Mb2.
+- **n3**: A node connecting the source of Mb4 to the bottom of resistor RS.
+- **n4**: An intermediate node in the compensation network connecting resistor RZ to capacitor Cc.
+
+The final net inventory is: **VDD, Vin, Vout, 0, n1, n2, n3, n4**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component Mb3:** This is a PMOS transistor.
+    - **Analysis:** The symbol has the source pin with an arrow pointing inward. The gate is the isolated pin. The drain is the remaining pin.
+    - **Final Connections:**
+        - Its **source** is connected to **VDD**.
+        - Its **gate** is connected to **n2**.
+        - Its **drain** is connected to **n1**.
+
+- **Component Mb1:** This is an NMOS transistor.
+    - **Analysis:** The symbol has the source pin with an arrow pointing outward. The gate is the isolated pin. The drain is the remaining pin.
+    - **Final Connections:**
+        - Its **source** is connected to **0**.
+        - Its **gate** and **drain** are connected to **n1** (making it diode-connected).
+
+- **Component RS:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to **VDD**.
+        - The other terminal is connected to **n3**.
+
+- **Component Mb4:** This is a PMOS transistor.
+    - **Analysis:** The symbol has the source pin with an arrow pointing inward. The gate is the isolated pin. The drain is the remaining pin.
+    - **Final Connections:**
+        - Its **source** is connected to **n3**.
+        - Its **gate** and **drain** are connected to **n2** (making it diode-connected).
+
+- **Component Mb2:** This is an NMOS transistor.
+    - **Analysis:** The symbol has the source pin with an arrow pointing outward. The gate is the isolated pin. The drain is the remaining pin.
+    - **Final Connections:**
+        - Its **source** is connected to **0**.
+        - Its **gate** is connected to **n1**.
+        - Its **drain** is connected to **n2**.
+
+- **Component CE:** This is a capacitor.
+    - **Final Connections:**
+        - One terminal is connected to **VDD**.
+        - The other terminal is connected to **Vin**.
+
+- **Component M9:** This is a PMOS transistor.
+    - **Analysis:** The symbol has the source pin with an arrow pointing inward. The gate is the isolated pin. The drain is the remaining pin.
+    - **Final Connections:**
+        - Its **source** is connected to **VDD**.
+        - Its **gate** is connected to **Vin**.
+        - Its **drain** is connected to **Vout**.
+
+- **Component RZ:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to **Vin**.
+        - The other terminal is connected to **n4**.
+
+- **Component Cc:** This is a compensation capacitor.
+    - **Final Connections:**
+        - One terminal is connected to **n4**.
+        - The other terminal is connected to **Vout**.
+
+- **Component M11:** This is an NMOS transistor.
+    - **Analysis:** The symbol has the source pin with an arrow pointing outward. The gate is the isolated pin. The drain is the remaining pin.
+    - **Final Connections:**
+        - Its **source** is connected to **0**.
+        - Its **gate** is connected to **n1**.
+        - Its **drain** is connected to **Vout**.
+
+- **Component CL:** This is a load capacitor.
+    - **Final Connections:**
+        - One terminal is connected to **Vout**.
+        - The other terminal is connected to **0**.

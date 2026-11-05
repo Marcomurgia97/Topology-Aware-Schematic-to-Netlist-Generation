@@ -1,0 +1,75 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The schematic identifies two primary power rails. The top rail is labeled "9V+", representing the positive supply voltage. The bottom rail connects to the negative terminal of the battery and a ground symbol, which acts as the common ground reference. These are designated as nets `9V+` and `0` respectively.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    Several junctions connect multiple components but lack specific labels:
+    *   **Node A:** Connects the bottom of resistor R1 to the anode of LED L1. This node is not directly connected to the power rails. It is assigned the name `n1`.
+    *   **Node B:** Connects the cathode of LED L1, the positive terminal of capacitor C1, and the collector of transistor Q1. This is a distinct node and is assigned the name `n2`.
+    *   **Node C:** Connects the bottom of resistor R2, the negative terminal of capacitor C1, and wire routing to the base of transistor Q2. This node is distinct and is assigned the name `n3`.
+    *   **Node D:** Connects the bottom of resistor R3, the negative terminal of capacitor C2, and wire routing to the base of transistor Q1. This node is distinct and is assigned the name `n4`.
+    *   **Node E:** Connects the cathode of LED L2, the positive terminal of capacitor C2, and the collector of transistor Q2. This is a distinct node and is assigned the name `n5`.
+    *   **Node F:** Connects the bottom of resistor R4 to the anode of LED L2. This node is distinct and is assigned the name `n6`.
+
+3.  **Final Net Inventory:**
+    The complete list of verified nets is: `9V+`, `0`, `n1`, `n2`, `n3`, `n4`, `n5`, `n6`.
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component 9V Battery:** This is a DC voltage source.
+    *   **Final Connections:**
+        *   The positive terminal is connected to the `9V+` net.
+        *   The negative terminal is connected to the `0` (ground) net.
+
+*   **Component R1:** This is a 470 Ohm resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the `9V+` net.
+        *   The other terminal is connected to the `n1` net.
+
+*   **Component L1:** This is a Light Emitting Diode (LED).
+    *   **Final Connections:**
+        *   The anode is connected to the `n1` net.
+        *   The cathode is connected to the `n2` net.
+
+*   **Component C1:** This is a 10µF polarized electrolytic capacitor.
+    *   **Final Connections:**
+        *   The positive (+) terminal is connected to the `n2` net.
+        *   The negative (-) terminal is connected to the `n3` net.
+
+*   **Component Q1:** This is an NPN Bipolar Junction Transistor.
+    *   **Final Connections:**
+        *   The collector is connected to the `n2` net.
+        *   The base is connected to the `n4` net.
+        *   The emitter is connected to the `0` (ground) net.
+
+*   **Component R2:** This is a 47k Ohm resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the `9V+` net.
+        *   The other terminal is connected to the `n3` net.
+
+*   **Component R3:** This is a 47k Ohm resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the `9V+` net.
+        *   The other terminal is connected to the `n4` net.
+
+*   **Component C2:** This is a 10µF polarized electrolytic capacitor.
+    *   **Final Connections:**
+        *   The positive (+) terminal is connected to the `n5` net.
+        *   The negative (-) terminal is connected to the `n4` net.
+
+*   **Component Q2:** This is an NPN Bipolar Junction Transistor.
+    *   **Final Connections:**
+        *   The collector is connected to the `n5` net.
+        *   The base is connected to the `n3` net.
+        *   The emitter is connected to the `0` (ground) net.
+
+*   **Component L2:** This is a Light Emitting Diode (LED).
+    *   **Final Connections:**
+        *   The cathode is connected to the `n5` net.
+        *   The anode is connected to the `n6` net.
+
+*   **Component R4:** This is a 470 Ohm resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the `9V+` net.
+        *   The other terminal is connected to the `n6` net.

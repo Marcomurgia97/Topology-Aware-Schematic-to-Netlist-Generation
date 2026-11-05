@@ -1,0 +1,64 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **Labeled Nets:** The schematic contains the following labeled nets:
+    -   `VDD` (Positive power supply)
+    -   `Vout` (Output voltage)
+    -   `Vin` (Input voltage)
+    -   `Vb` (Bias voltage)
+    -   `0` (Ground, indicated by the ground symbols at the bottom)
+
+2.  **Unlabeled Nodes:** Several component terminals connect at points that do not correspond to the labeled nets above. These were analyzed as follows:
+    -   **Node n1:** The junction connecting the drain of M1, the source of M2, one side of resistor R1, and the bottom plate of capacitor C2. This node is not directly connected to any labeled net. It is assigned the name `n1`.
+    -   **Node n2:** The junction connecting the gate of M1, the other side of resistor R1, and the right plate of capacitor C1. This node is isolated from labeled nets. It is assigned the name `n2`.
+    -   **Node n3:** The junction connecting the gate of M3, the left side of resistor R2, and the top plate of capacitor C2. This node is isolated from labeled nets. It is assigned the name `n3`.
+
+3.  **Final Net Inventory:** The verified list of nets is `VDD`, `Vout`, `Vin`, `Vb`, `0`, `n1`, `n2`, and `n3`.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M3:** This is a PMOS transistor (identified by the arrow on the source terminal connected to the positive supply).
+    -   **Analysis:**
+        -   Pin identification logic: The symbol has a single pin on the left (Gate). On the right side, the top pin has an arrow, identifying it as the Source. The remaining bottom pin is the Drain.
+        -   Pin Mapping: The Gate connects to net `n3`. The Source connects to net `VDD`. The Drain connects to net `Vout`.
+    -   **Final Connections:**
+        -   **Gate:** connected to `n3`
+        -   **Source:** connected to `VDD`
+        -   **Drain:** connected to `Vout`
+
+-   **Component M2:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: The single pin on the left is the Gate. On the right, the bottom pin has the arrow, identifying it as the Source. The top pin is the Drain.
+        -   Pin Mapping: The Gate connects to the input `Vin`. The Source connects to net `n1`. The Drain connects to `Vout`.
+    -   **Final Connections:**
+        -   **Gate:** connected to `Vin`
+        -   **Source:** connected to `n1`
+        -   **Drain:** connected to `Vout`
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: The single pin on the left is the Gate. On the right, the bottom pin has the arrow, identifying it as the Source. The top pin is the Drain.
+        -   Pin Mapping: The Gate connects to net `n2`. The Source connects to ground (`0`). The Drain connects to net `n1`.
+    -   **Final Connections:**
+        -   **Gate:** connected to `n2`
+        -   **Source:** connected to `0`
+        -   **Drain:** connected to `n1`
+
+-   **Component R2:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to `Vb`.
+        -   The other terminal is connected to `n3`.
+
+-   **Component C2:** This is a capacitor.
+    -   **Final Connections:**
+        -   The top plate is connected to `n3`.
+        -   The bottom plate is connected to `n1`.
+
+-   **Component R1:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to `n1`.
+        -   The other terminal is connected to `n2`.
+
+-   **Component C1:** This is a capacitor.
+    -   **Final Connections:**
+        -   The right plate is connected to `n2`.
+        -   The left plate is connected to `0` (ground).

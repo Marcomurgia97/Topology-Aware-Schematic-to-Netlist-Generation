@@ -1,0 +1,75 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **Labeled Nets:**
+    *   **VDD:** The top horizontal power rail.
+    *   **X:** The node located on the right side of the circuit, connecting resistor $R_b$, the drain of $M_6$, and the drain of $M_5$.
+    *   **0:** The ground net, indicated by multiple ground symbols at the bottom of the schematic.
+
+2.  **Unlabeled Nodes Identification & Verification:**
+    *   **Node n1:** A junction connecting the drain of $M_4$, the drain of $M_1$, the gate of $M_1$, and the gate of $M_2$. This node is not directly connected to any labeled net.
+    *   **Node n2:** A junction connecting the drain of $M_3$, the drain of $M_2$, the gate of $M_3$, the gate of $M_4$, and the gate of $M_5$. This node is not directly connected to any labeled net.
+    *   **Node n3:** A junction connecting the source of $M_2$ and the top terminal of resistor $R_S$. This node is not directly connected to any labeled net.
+    *   **Node n4:** A junction connecting the bottom terminal of resistor $R_a$, the top terminal of resistor $R_b$, and the gate of $M_6$. This node is not directly connected to any labeled net.
+
+**Final Net Inventory:** VDD, X, 0, n1, n2, n3, n4.
+
+---
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:** The Gate is the single pin on the left. The Source is the pin with the arrow pointing outward on the right. The Drain is the remaining pin on the right.
+    -   **Final Connections:**
+        *   The **gate** is connected to net **n1**.
+        *   The **drain** is connected to net **n1** (diode-connected).
+        *   The **source** is connected to net **0** (ground).
+
+-   **Component M2:** This is an NMOS transistor.
+    -   **Analysis:** The Gate is the single pin on the left. The Source is the pin with the arrow pointing outward on the right. The Drain is the remaining pin on the right.
+    -   **Final Connections:**
+        *   The **gate** is connected to net **n1**.
+        *   The **drain** is connected to net **n2**.
+        *   The **source** is connected to net **n3**.
+
+-   **Component M3:** This is a PMOS transistor.
+    -   **Analysis:** The Gate is the single pin on the left. The Source is the pin with the arrow pointing inward on the right. The Drain is the remaining pin on the right.
+    -   **Final Connections:**
+        *   The **gate** is connected to net **n2**.
+        *   The **drain** is connected to net **n2** (diode-connected).
+        *   The **source** is connected to net **VDD**.
+
+-   **Component M4:** This is a PMOS transistor.
+    -   **Analysis:** The Gate is the single pin on the right. The Source is the pin with the arrow pointing inward on the left. The Drain is the remaining pin on the left.
+    -   **Final Connections:**
+        *   The **gate** is connected to net **n2**.
+        *   The **drain** is connected to net **n1**.
+        *   The **source** is connected to net **VDD**.
+
+-   **Component M5:** This is an NMOS transistor.
+    -   **Analysis:** The Gate is the single pin on the left. The Source is the pin with the arrow pointing outward on the right. The Drain is the remaining pin on the right.
+    -   **Final Connections:**
+        *   The **gate** is connected to net **n2**.
+        *   The **drain** is connected to net **X**.
+        *   The **source** is connected to net **0** (ground).
+
+-   **Component M6:** This is an NMOS transistor.
+    -   **Analysis:** The Gate is the single pin on the left. The Source is the pin with the arrow pointing outward on the right. The Drain is the remaining pin on the right.
+    -   **Final Connections:**
+        *   The **gate** is connected to net **n4**.
+        *   The **drain** is connected to net **X**.
+        *   The **source** is connected to net **0** (ground).
+
+-   **Component Ra:** This is a resistor.
+    -   **Final Connections:**
+        *   One terminal is connected to net **VDD**.
+        *   The other terminal is connected to net **n4**.
+
+-   **Component Rb:** This is a resistor.
+    -   **Final Connections:**
+        *   One terminal is connected to net **n4**.
+        *   The other terminal is connected to net **X**.
+
+-   **Component RS:** This is a resistor.
+    -   **Final Connections:**
+        *   One terminal is connected to net **n3**.
+        *   The other terminal is connected to net **0** (ground).

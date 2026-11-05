@@ -1,0 +1,6 @@
+M1 n_gate_nmos n_gate_nmos 0 0 NMOS
+M2 n_gate_pmos n_gate_nmos n_source_m2 n_source_m2 NMOS
+M3 n_gate_pmos n_gate_pmos VDD VDD PMOS
+M4 n_gate_nmos n_gate_pmos VDD VDD PMOS
+M5 n_gate_pmos n_gate_pmos n_gate_nmos n_gate_nmos NMOS
+RS n_source_m2 0 Rs

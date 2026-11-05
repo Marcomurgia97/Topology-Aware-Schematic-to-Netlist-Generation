@@ -1,0 +1,49 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+The primary labeled nets identified in the schematic are **VDD**, **Vin,CM** (connected to the inputs), **Vb**, and **0** (ground).
+
+Three key unlabeled nodes were identified and verified as distinct electrical points:
+1.  A node connecting the drain of transistor M1, the bottom terminal of the left resistor RD, and the left terminal of the differential output. This node is not directly connected to any other labeled net and is assigned the new name **n1**.
+2.  A node connecting the drain of transistor M2, the bottom terminal of the right resistor RD, and the right terminal of the differential output. This node is assigned the new name **n2**.
+3.  A node connecting the source of transistor M1, the source of transistor M2, and the drain of transistor M3. A connection dot confirms these three points are electrically joined. This node is assigned the new name **n3**.
+
+The final net inventory is: **VDD**, **Vin,CM**, **Vb**, **0**, **n1**, **n2**, **n3**. (Note: The differential output labeled **Vout** is taken between nets **n1** and **n2**).
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component M1:** This is an NMOS transistor located on the left side of the differential pair.
+    *   **Analysis:**
+        *   Pin identification logic: The MOSFET symbol has a single pin on one side (Gate) and two pins on the other. The pin with the outward-pointing arrow is the Source. The remaining pin is the Drain.
+        *   Pin Mapping: For M1, the Gate is the left pin. The Source is the bottom-right pin (with arrow). The Drain is the top-right pin.
+    *   **Final Connections:**
+        *   Its **gate** is connected to the **Vin,CM** net.
+        *   Its **source** is connected to the **n3** node.
+        *   Its **drain** is connected to the **n1** node.
+
+*   **Component M2:** This is an NMOS transistor located on the right side of the differential pair.
+    *   **Analysis:**
+        *   Pin identification logic: Following the standard symbol, the single pin is the Gate. The pin on the channel side with the outward arrow is the Source. The other channel pin is the Drain.
+        *   Pin Mapping: For M2, the Gate is the right pin. The Source is the bottom-left pin (with arrow). The Drain is the top-left pin.
+    *   **Final Connections:**
+        *   Its **gate** is connected to the **Vin,CM** net.
+        *   Its **source** is connected to the **n3** node.
+        *   Its **drain** is connected to the **n2** node.
+
+*   **Component M3:** This is an NMOS transistor acting as the tail current source.
+    *   **Analysis:**
+        *   Pin identification logic: The single pin is the Gate. The pin with the outward arrow is the Source. The remaining pin is the Drain.
+        *   Pin Mapping: For M3, the Gate is the left pin. The Source is the bottom-right pin (with arrow). The Drain is the top-right pin.
+    *   **Final Connections:**
+        *   Its **gate** is connected to the **Vb** net.
+        *   Its **source** is connected to **0** (ground).
+        *   Its **drain** is connected to the **n3** node.
+
+*   **Component Left RD:** This is a resistor.
+    *   **Final Connections:**
+        *   The top terminal is connected to the **VDD** net.
+        *   The bottom terminal is connected to the **n1** node.
+
+*   **Component Right RD:** This is a resistor.
+    *   **Final Connections:**
+        *   The top terminal is connected to the **VDD** net.
+        *   The bottom terminal is connected to the **n2** node.

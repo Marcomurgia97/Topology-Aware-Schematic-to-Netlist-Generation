@@ -1,0 +1,8 @@
+R1 Vcc Node1 470
+R2 Vcc Node3 47k
+R3 Vcc Node4 47k
+R4 Vcc Node12 470
+D1 Node1 0
+D2 Node12 0
+M1 Node1 Node2 0 NMOS
+M2 Node11 Node7 0 NMOS

@@ -1,0 +1,10 @@
+C1 vi1 vi1  
+R1 vi1 n1 VALUE  
+M1 vO1 vi1 n1 n1 NMOS  
+R2 vO1 VPP VALUE  
+C2 vO2 vi2  
+R3 vi2 n3 VALUE  
+M2 vO2 vi2 n3 n3 NMOS  
+R4 vO2 VPP VALUE  
+R5 n1 n3 VALUE  
+R6 n2 0 VALUE

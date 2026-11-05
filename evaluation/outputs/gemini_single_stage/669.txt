@@ -1,0 +1,13 @@
+M1 Net_Fold_R Vin_1 Net_Source_Pair Net_Source_Pair NMOS
+M2 Net_Fold_L Vin_2 Net_Source_Pair Net_Source_Pair NMOS
+M3 Net_Fold_L Bias_P1 VDD VDD PMOS
+M4 Net_Fold_R Bias_P1 VDD VDD PMOS
+M5 Vout1 Bias_P2 Net_Fold_L Net_Fold_L PMOS
+M6 Vout2 Bias_P2 Net_Fold_R Net_Fold_R PMOS
+M7 Net_Tail_Low Vout1 0 0 NMOS
+M8 Net_Tail_Low Vout2 0 0 NMOS
+M9 Net_Source_Pair Vb Net_Tail_Low Net_Tail_Low NMOS
+M10 Net_Casc_L Bias_N1 0 0 NMOS
+M11 Net_Casc_R Bias_N1 0 0 NMOS
+M12 Vout1 Bias_N2 Net_Casc_L Net_Casc_L NMOS
+M13 Vout2 Bias_N2 Net_Casc_R Net_Casc_R NMOS

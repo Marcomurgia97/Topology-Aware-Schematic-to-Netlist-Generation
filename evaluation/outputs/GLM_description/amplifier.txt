@@ -1,0 +1,45 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are Vcc, Output, Input, and 0 (ground).
+Two important unlabeled nodes were identified:
+- Node B: Junction of capacitor C1, resistor R1, and resistor R2. It is not directly connected to any labeled net, so it is assigned the new name n1.
+- Node E: Junction of resistor RE, capacitor C2, and the transistor's emitter. It is not directly connected to any labeled net, so it is assigned the new name n2.
+The final net inventory is: Vcc, Output, Input, 0, n1, n2.
+
+**PHASE 2: Description of Components and Connections**
+- **Component C1:** This is a capacitor (input coupling capacitor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'Input' node.
+        - Its other terminal is connected to the 'n1' node.
+- **Component R1:** This is a resistor (base bias resistor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'Vcc' node.
+        - Its other terminal is connected to the 'n1' node.
+- **Component R2:** This is a resistor (base bias resistor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'n1' node.
+        - Its other terminal is connected to the '0' node.
+- **Component Vcc:** This is a voltage source (power supply).
+    - **Final Connections:**
+        - Its positive terminal is connected to the top terminal of resistor RL.
+        - Its negative terminal is connected to the '0' node.
+- **Component RL:** This is a resistor (load resistor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'Vcc' node.
+        - Its other terminal is connected to the 'n2' node.
+- **Component C3:** This is a capacitor (output coupling capacitor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'n2' node.
+        - Its other terminal is connected to the 'Output' node.
+- **Component Q1:** This is a BJT (NPN transistor).
+    - **Final Connections:**
+        - Its base terminal is connected to the 'n1' node.
+        - Its collector terminal is connected to the 'n2' node.
+        - Its emitter terminal is connected to the 'n2' node.
+- **Component RE:** This is a resistor (emitter resistor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'n2' node.
+        - Its other terminal is connected to the '0' node.
+- **Component C2:** This is a capacitor (emitter bypass capacitor).
+    - **Final Connections:**
+        - Its one terminal is connected to the 'n2' node.
+        - Its other terminal is connected to the '0' node.<|end_of_box|>

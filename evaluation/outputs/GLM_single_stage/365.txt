@@ -1,0 +1,4 @@
+M1 Net2 Net1 0 0 NMOS
+R1 Vin Net1 Rs
+C1 Net1 0 C_GS
+R2 V_DD Net2 R_D

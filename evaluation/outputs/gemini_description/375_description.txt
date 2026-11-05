@@ -1,0 +1,35 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The schematic defines a two-terminal port on the right side labeled with impedance **Z1**. The top terminal of this port serves as the first primary net, which we will identify as **Net_Top_Terminal**. The bottom terminal of this port serves as the second primary net, identified as **Net_Bottom_Terminal**.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    An inspection of the circuit reveals an internal junction where three components meet: the left side of the inductor **L**, the left side of resistor **R1**, and the top side of resistor **R2**.
+    -   **Verification Check:** Is this node directly connected to **Net_Top_Terminal**? No, it is separated by components L and R1. Is it connected to **Net_Bottom_Terminal**? No, it is separated by resistor R2.
+    -   **Result:** Since this node is electrically distinct from the terminal nets, it is assigned the new unique name **n1**.
+
+3.  **Final Net Inventory:**
+    The complete list of verified nets in the circuit is: **Net_Top_Terminal**, **Net_Bottom_Terminal**, and **n1**.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component L:** This is an inductor.
+    -   **Final Connections:**
+        -   Its **left terminal** is connected to the internal node **n1**.
+        -   Its **right terminal** is connected to the **Net_Top_Terminal**.
+
+-   **Component R1:** This is a resistor.
+    -   **Final Connections:**
+        -   Its **left terminal** is connected to the internal node **n1**.
+        -   Its **right terminal** is connected to the **Net_Top_Terminal**.
+        -   *Note:* This component is connected in parallel with Inductor L.
+
+-   **Component R2:** This is a resistor.
+    -   **Final Connections:**
+        -   Its **top terminal** is connected to the internal node **n1**.
+        -   Its **bottom terminal** is connected to the **Net_Bottom_Terminal**.
+
+-   **Port Z1:** This represents the impedance measurement looking into the circuit from the right.
+    -   **Final Connections:**
+        -   The **top connection point** corresponds to the **Net_Top_Terminal**.
+        -   The **bottom connection point** corresponds to the **Net_Bottom_Terminal**.

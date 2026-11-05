@@ -1,0 +1,5 @@
+M1 Vout V_in,CM common NMOS
+M2 Vout V_in,CM common NMOS
+M3 common V_b 0 NMOS
+R1 V_DD Vout 1k
+R2 V_DD Vout 1k

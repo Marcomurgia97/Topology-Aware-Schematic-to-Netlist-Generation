@@ -1,0 +1,4 @@
+R1 VDD X VALUE  
+M2 X X 0 0 NMOS  
+M1 Y X 0 0 NMOS  
+C1 X Y

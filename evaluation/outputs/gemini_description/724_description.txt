@@ -1,0 +1,62 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    *   **Vin:** The input signal node at the positive terminal of the voltage source.
+    *   **VDD:** The positive power supply rail.
+    *   **Vout:** The output signal node.
+    *   **0:** The ground reference, indicated by the ground symbols connected to the negative terminal of the voltage source, the bottom of $R_L$, and the bottom of $C_L$.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Gate Node:** There is a junction connecting the right side of resistor $R_S$, the bottom plate of capacitor $C_E$, the Gate of transistor $M_9$, and the left side of resistor $R_Z$. A check confirms this node is not directly connected to any labeled net (it is separated from Vin by $R_S$ and from VDD by $C_E$). This is a distinct net.
+    *   **Intermediate Node:** There is a connection point between resistor $R_Z$ and capacitor $C_C$. This node isolates the two components within the feedback branch. A check confirms it connects only these two components and touches no labeled nets. This is a distinct net.
+
+3.  **Assign Names and Finalize Inventory:**
+    *   The Gate Node is assigned the name **n_gate**.
+    *   The Intermediate Node is assigned the name **n1**.
+    *   **Final Net Inventory:** Vin, VDD, Vout, 0, n_gate, n1.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component Vin:** This is an independent AC voltage source.
+    -   **Final Connections:**
+        -   The positive terminal is connected to the **Vin** net.
+        -   The negative terminal is connected to **0** (ground).
+
+-   **Component Rs:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **Vin** net.
+        -   The other terminal is connected to the **n_gate** net.
+
+-   **Component Ce:** This is a capacitor.
+    -   **Final Connections:**
+        -   The top plate is connected to the **VDD** net.
+        -   The bottom plate is connected to the **n_gate** net.
+
+-   **Component M9:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   Pin identification logic: The symbol has a single pin on the left side and two pins on the right side. The single pin on the left is the **Gate**. On the right side, the pin with the outward-pointing arrow is the **Source**. The remaining top pin on the right is the **Drain**.
+        -   Pin Mapping: Based on the schematic, the Gate connects to the central junction (n_gate). The Drain goes up to the supply rail. The Source goes down to the output node.
+    -   **Final Connections:**
+        -   The **Gate** is connected to the **n_gate** net.
+        -   The **Drain** is connected to the **VDD** net.
+        -   The **Source** is connected to the **Vout** net.
+
+-   **Component Rz:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the **n_gate** net.
+        -   The other terminal is connected to the **n1** net.
+
+-   **Component Cc:** This is a capacitor.
+    -   **Final Connections:**
+        -   One plate is connected to the **n1** net.
+        -   The other plate is connected to the **Vout** net.
+
+-   **Component RL:** This is a load resistor.
+    -   **Final Connections:**
+        -   The top terminal is connected to the **Vout** net.
+        -   The bottom terminal is connected to **0** (ground).
+
+-   **Component CL:** This is a load capacitor.
+    -   **Final Connections:**
+        -   The top plate is connected to the **Vout** net.
+        -   The bottom plate is connected to **0** (ground).

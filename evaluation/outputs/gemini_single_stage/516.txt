@@ -1,0 +1,3 @@
+M1 Vout N_Gate Vin Vin NMOS
+R1 VDD Vout RD
+R2 Vb N_Gate RG

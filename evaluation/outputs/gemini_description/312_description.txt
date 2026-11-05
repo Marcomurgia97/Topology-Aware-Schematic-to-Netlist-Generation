@@ -1,0 +1,70 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    *   **VDD**: The positive supply rail at the top of the circuit.
+    *   **Vout**: The output node located at the connection between resistor RD and transistor M1.
+    *   **Vin**: The input node connected to the positive terminal of the voltage source.
+    *   **X**: The node labeled 'X' located at the source of transistor M1.
+    *   **0**: The ground reference (0V), indicated by ground symbols connected to the voltage source, resistor RS, and resistor RB.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Node between R1 and Cin**: A wire connects resistor R1 directly to capacitor Cin. This segment is not connected to any other labeled net. It is identified as a distinct net. Let's verify: Is it connected to VDD? No. To Ground? No. To X? No (separated by Cin). To Vin? No (separated by R1). It is a new net, assigned the name **n1**.
+    *   **Bias Node**: A central junction connects the bottom of current source IB, the gate of transistor M1, the gate of transistor MB, and the drain of transistor MB. This node carries the bias voltage. It is distinct from other labeled nets. It is assigned the name **n_bias**.
+    *   **Node between MB and RB**: A wire connects the source of transistor MB to resistor RB. This point is not connected to ground directly or any other label. It is assigned the name **n2**.
+
+3.  **Final Net Inventory**: VDD, Vout, Vin, X, 0, n1, n_bias, n2.
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component Vin**: This is a DC/AC Voltage Source.
+    *   **Final Connections:**
+        *   The positive terminal is connected to the **Vin** net.
+        *   The negative terminal is connected to **0** (ground).
+
+*   **Component R1**: This is a Resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the **Vin** net.
+        *   The other terminal is connected to the **n1** net.
+
+*   **Component Cin**: This is a Capacitor.
+    *   **Final Connections:**
+        *   One plate is connected to the **n1** net.
+        *   The other plate is connected to the **X** net.
+
+*   **Component RS**: This is a Resistor.
+    *   **Final Connections:**
+        *   The top terminal is connected to the **X** net.
+        *   The bottom terminal is connected to **0** (ground).
+
+*   **Component M1**: This is an NMOS Transistor.
+    *   **Analysis:**
+        *   **Pin Identification Logic:** A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        *   **Pin Mapping:** Applying this to M1, the Gate is on the right of the M1 label (connected to the bias line). The Source is the pin with the outward arrow connected to node X. The Drain is the top pin connected to Vout.
+    *   **Final Connections:**
+        *   Its **gate** is connected to the **n_bias** net.
+        *   Its **source** is connected to the **X** net.
+        *   Its **drain** is connected to the **Vout** net.
+
+*   **Component RD**: This is a Resistor.
+    *   **Final Connections:**
+        *   The top terminal is connected to the **VDD** net.
+        *   The bottom terminal is connected to the **Vout** net.
+
+*   **Component IB**: This is a Current Source.
+    *   **Final Connections:**
+        *   The top terminal (tail of the arrow) is connected to the **VDD** net.
+        *   The bottom terminal (head of the arrow) is connected to the **n_bias** net.
+
+*   **Component MB**: This is an NMOS Transistor.
+    *   **Analysis:**
+        *   **Pin Identification Logic:** Following the standard symbol rules, the single pin on the left is the Gate. The pin on the right with the outward arrow is the Source. The remaining pin on the right is the Drain.
+        *   **Pin Mapping:** The Gate and Drain are visibly shorted together at the bias node. The Source connects to the resistor below.
+    *   **Final Connections:**
+        *   Its **gate** is connected to the **n_bias** net.
+        *   Its **drain** is connected to the **n_bias** net.
+        *   Its **source** is connected to the **n2** net.
+
+*   **Component RB**: This is a Resistor.
+    *   **Final Connections:**
+        *   The top terminal is connected to the **n2** net.
+        *   The bottom terminal is connected to **0** (ground).

@@ -1,0 +1,11 @@
+B1 9V+ 0 9V
+R1 9V+ n2 470
+D1 n2 n2
+R2 9V+ n1 47k
+C1 n1 n1 10u
+Q1 n_c2q1 n2 0 npn
+R3 9V+ n2 47k
+C2 n2 n1 10u
+Q2 n1 n2 0 npn
+R4 9V+ n2 470
+D2 n2 n2

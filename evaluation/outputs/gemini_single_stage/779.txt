@@ -1,0 +1,2 @@
+M1 0 CK Vout Vout PMOS
+C1 Vout 0 CH

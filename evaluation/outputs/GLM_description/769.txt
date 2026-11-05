@@ -1,0 +1,67 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are VDD and 0 (ground).
+An unlabeled node where M1’s drain connects to M4’s source and M2’s source was identified. A check confirms it is NOT directly connected to any labeled net. Therefore, it is assigned the new name n1.
+An unlabeled node where M2’s drain connects to M3’s source and M5’s source was identified. A check confirms it is NOT directly connected to any labeled net. Therefore, it is assigned the new name n2.
+An unlabeled node where M3’s drain connects to M4’s drain was identified. A check confirms it is NOT directly connected to any labeled net. Therefore, it is assigned the new name n3.
+An unlabeled node where M5’s drain connects to the X node was identified. A check confirms it is NOT directly connected to any labeled net. Therefore, it is assigned the new name n4.
+An unlabeled node where Ra’s bottom end connects to Rb’s top end was identified. A check confirms it is NOT directly connected to any labeled net. Therefore, it is assigned the new name n5.
+An unlabeled node labeled X was identified. A check confirms it is NOT directly connected to any labeled net. Therefore, it is assigned the new name n6.
+The final net inventory is: VDD, 0, n1, n2, n3, n4, n5, n6.
+
+**PHASE 2: Description of Components and Connections**
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: Gate is connected to n1. Source is connected to 0. Drain is connected to n2.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'n1' node.
+        - Its **source** and **bulk** are connected to 0 (ground).
+        - Its **drain** is connected to the 'n2' node.
+- **Component M2:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M2, applying this logic, I have identified: Gate is connected to n1. Source is connected to 0. Drain is connected to n2.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'n1' node.
+        - Its **source** and **bulk** are connected to 0 (ground).
+        - Its **drain** is connected to the 'n2' node.
+- **Component M3:** This is a PMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M3, applying this logic, I have identified: Gate is connected to VDD. Source is connected to n2. Drain is connected to n3.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'VDD' node.
+        - Its **source** is connected to the 'n2' node.
+        - Its **drain** is connected to the 'n3' node.
+- **Component M4:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M4, applying this logic, I have identified: Gate is connected to VDD. Source is connected to n1. Drain is connected to n3.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'VDD' node.
+        - Its **source** is connected to the 'n1' node.
+        - Its **drain** is connected to the 'n3' node.
+- **Component M5:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M5, applying this logic, I have identified: Gate is connected to n2. Source is connected to 0. Drain is connected to n4.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'n2' node.
+        - Its **source** and **bulk** are connected to 0 (ground).
+        - Its **drain** is connected to the 'n4' node.
+- **Component M6:** This is a PMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M6, applying this logic, I have identified: Gate is connected to n6. Source is connected to 0. Drain is connected to n6.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'n6' node.
+        - Its **source** and **bulk** are connected to 0 (ground).
+        - Its **drain** is connected to the 'n6' node.
+- **Component Ra:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to the 'VDD' node.
+        - The other end is connected to the 'n5' node.
+- **Component Rb:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to the 'n5' node.
+        - The other end is connected to the 'n6' node.<|end_of_box|>

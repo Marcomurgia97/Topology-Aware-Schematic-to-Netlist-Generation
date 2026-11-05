@@ -1,0 +1,8 @@
+M1 X G1 0 0 NMOS
+Rs Vin1 G1 Rs
+R1 VDD X 1/gm3
+C1 VDD X VALUE
+M5 Vout1 X VDD VDD PMOS
+Cgd5 X Vout1 Cgd5
+Rd Vout1 0 Rd
+Cl Vout1 0 CL

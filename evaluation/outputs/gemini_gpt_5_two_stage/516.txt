@@ -1,0 +1,3 @@
+M1 V_out n1 V_in V_in NMOS
+RD V_DD V_out VALUE
+RG V_b n1 VALUE

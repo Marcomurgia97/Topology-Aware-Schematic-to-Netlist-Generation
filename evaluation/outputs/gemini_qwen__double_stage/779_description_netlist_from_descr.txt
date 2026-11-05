@@ -1,0 +1,2 @@
+M1 0 CK Vout Vout PMOS
+CH Vout 0 VALUE

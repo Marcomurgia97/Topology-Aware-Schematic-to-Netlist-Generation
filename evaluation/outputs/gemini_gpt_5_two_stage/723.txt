@@ -1,0 +1,5 @@
+M9 Vout Vout VDD VDD PMOS
+CE VDD Vout VALUE
+RS Vout 0 VALUE
+RL Vout 0 VALUE
+CL Vout 0 VALUE

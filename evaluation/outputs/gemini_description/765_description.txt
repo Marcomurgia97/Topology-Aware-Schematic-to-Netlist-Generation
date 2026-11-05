@@ -1,0 +1,58 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    -   **VDD**: The positive power supply rail at the top.
+    -   **0**: The ground reference indicated by the ground symbols at the bottom (connected to M1 source and Rs).
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    -   **Node 1:** A junction connecting the Drain of M4, the Drain of M1, the Gate of M1, the Gate of M2, and the Source of M5. A check confirms this node is not directly connected to VDD or Ground. This is a distinct net.
+    -   **Node 2:** A junction connecting the Drain of M3, the Drain of M2, the Gate of M3, the Gate of M4, the Drain of M5, and the Gate of M5. A check confirms this node is not directly connected to VDD or Ground. This is a distinct net.
+    -   **Node 3:** A junction connecting the Source of M2 and the resistor Rs. This is not connected directly to any other net. This is a distinct net.
+
+3.  **Assign Names and Finalize Inventory:**
+    -   **n1**: The common node for the left branch output and NMOS gates.
+    -   **n2**: The common node for the right branch output and PMOS gates.
+    -   **n3**: The source degeneration node for M2.
+    -   **Final Net Inventory:** VDD, 0, n1, n2, n3.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:** The arrow on the source terminal points outward (away from the gate), identifying it as an NMOS. The Gate is connected to its own Drain (diode-connected).
+    -   **Final Connections:**
+        -   **Gate:** Connected to net **n1**.
+        -   **Drain:** Connected to net **n1**.
+        -   **Source:** Connected to net **0** (ground).
+
+-   **Component M2:** This is an NMOS transistor.
+    -   **Analysis:** The arrow on the source terminal points outward, identifying it as an NMOS.
+    -   **Final Connections:**
+        -   **Gate:** Connected to net **n1**.
+        -   **Drain:** Connected to net **n2**.
+        -   **Source:** Connected to net **n3**.
+
+-   **Component M3:** This is a PMOS transistor.
+    -   **Analysis:** The arrow on the source terminal points inward (towards the gate), identifying it as a PMOS. The Gate is connected to its own Drain (diode-connected).
+    -   **Final Connections:**
+        -   **Gate:** Connected to net **n2**.
+        -   **Drain:** Connected to net **n2**.
+        -   **Source:** Connected to net **VDD**.
+
+-   **Component M4:** This is a PMOS transistor.
+    -   **Analysis:** The arrow on the source terminal points inward, identifying it as a PMOS.
+    -   **Final Connections:**
+        -   **Gate:** Connected to net **n2**.
+        -   **Drain:** Connected to net **n1**.
+        -   **Source:** Connected to net **VDD**.
+
+-   **Component M5:** This is an NMOS transistor (used here as a startup device).
+    -   **Analysis:** The arrow on the source terminal points outward, identifying it as an NMOS. The drain wire goes up to the PMOS gate line (n2). The gate wire goes up and turns right to merge with the vertical PMOS drain line (n2). Thus, Gate and Drain share the same node.
+    -   **Final Connections:**
+        -   **Gate:** Connected to net **n2**.
+        -   **Drain:** Connected to net **n2**.
+        -   **Source:** Connected to net **n1**.
+
+-   **Component Rs:** This is a Resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to net **n3**.
+        -   The other terminal is connected to net **0** (ground).

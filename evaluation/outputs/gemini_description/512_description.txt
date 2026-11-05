@@ -1,0 +1,34 @@
+**PHASE 1: Global Identification and Verification of Nets**
+The schematic lists several explicitly labeled nets: **VDD**, **Vout**, **Vin**, **Vb**, and **0** (representing the ground symbol).
+An inspection of the circuit reveals one distinct unlabeled node located at the junction of three components: the source of transistor M1, the top terminal of resistor $R_S$, and the bottom terminal of resistor $R_F$. A verification check confirms this node is not directly connected to any of the labeled nets. Therefore, it is assigned the unique name **n1**.
+The final verified net inventory is: **VDD**, **Vout**, **Vin**, **Vb**, **0**, and **n1**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component M2:** This is a PMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: The arrow is located on the top terminal and points inward, identifying it as the Source of a PMOS device. The single pin on the left is the Gate. The remaining bottom pin is the Drain.
+    - **Final Connections:**
+        - Its **gate** is connected to the **Vb** net.
+        - Its **source** is connected to the **VDD** net.
+        - Its **drain** is connected to the **Vout** net.
+
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: The arrow is located on the bottom terminal and points outward, identifying it as the Source of an NMOS device. The single pin on the left is the Gate. The remaining top pin is the Drain.
+    - **Final Connections:**
+        - Its **gate** is connected to the **Vin** net.
+        - Its **source** is connected to the **n1** net.
+        - Its **drain** is connected to the **Vout** net.
+
+- **Component $R_F$:** This is a resistor acting as a feedback element.
+    - **Final Connections:**
+        - One terminal is connected to the **Vout** net.
+        - The other terminal is connected to the **n1** net.
+
+- **Component $R_S$:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the **n1** net.
+        - The other terminal is connected to the **0** (ground) net.

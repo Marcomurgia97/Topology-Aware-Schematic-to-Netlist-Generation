@@ -1,0 +1,6 @@
+Rs Vin N1 Rs
+Ce VDD N1 Ce
+Cc N1 Vout Cc
+M9 VDD N1 Vout Vout NMOS
+Rl Vout 0 Rl
+Cl Vout 0 Cl

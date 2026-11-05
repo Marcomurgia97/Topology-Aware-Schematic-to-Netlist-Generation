@@ -1,0 +1,5 @@
+R_S Node_A 0 VALUE
+C_E Node_A V_DD VALUE
+M9 V_out Node_A V_out V_out NMOS
+R_L V_out 0 VALUE
+C_L V_out 0 VALUE

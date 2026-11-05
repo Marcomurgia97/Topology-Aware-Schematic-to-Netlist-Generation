@@ -1,0 +1,2 @@
+M1 CK 0 Vout Vout NMOS
+C1 Vout 0 VALUE

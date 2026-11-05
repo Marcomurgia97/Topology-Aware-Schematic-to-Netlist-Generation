@@ -1,0 +1,59 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **Labeled Nets:** The schematic contains clearly labeled nets for the supply voltage **VDD** and the ground reference **0**. There is also a label **Iout**, which indicates the current flowing through the right-hand branch, but the electrical node it corresponds to will be identified below.
+
+2.  **Unlabeled Nodes & Verification:**
+    *   **Node A:** There is a connection junction linking the drain of transistor M4, the top terminal of resistor $R_S$, and a wire that loops around to connect to the gate of transistor M1. This node is not directly connected to VDD or 0. It is a distinct net.
+    *   **Node B:** There is a connection junction linking the drain of transistor M1, the bottom terminal of resistor $R_S$, and a wire that extends to the right to connect to the gate of transistor M2. This node is distinct.
+    *   **Node C:** There is a connection junction linking the drain of transistor M3, the drain of transistor M2, the gate of transistor M3, and the gate of transistor M4. This node serves as the output of the PMOS mirror and the drain of the NMOS M2. It is a distinct net.
+
+3.  **Net Inventory:**
+    *   **VDD**
+    *   **0** (Ground)
+    *   **n1** (The node connecting M4 Drain, Top of $R_S$, and M1 Gate)
+    *   **n2** (The node connecting M1 Drain, Bottom of $R_S$, and M2 Gate)
+    *   **n3** (The node connecting M3 Drain, M2 Drain, M3 Gate, and M4 Gate)
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component M1:** This is an NMOS transistor.
+    *   **Analysis:**
+        *   **Pin Identification:** The symbol shows the Gate as the single plate on the left side. On the right side, the channel has two terminals: the top one is the Drain, and the bottom one with the outward-pointing arrow is the Source.
+        *   **Pin Mapping:** The Gate wire loops up to connect to node **n1**. The Source connects directly to the ground net **0**. The Drain connects to node **n2**.
+    *   **Final Connections:**
+        *   Gate: Connected to **n1**
+        *   Source: Connected to **0**
+        *   Drain: Connected to **n2**
+
+*   **Component M2:** This is an NMOS transistor.
+    *   **Analysis:**
+        *   **Pin Identification:** Similar to M1, the Gate is the plate on the left. The Source is the bottom-right pin with the outward arrow, and the Drain is the top-right pin.
+        *   **Pin Mapping:** The Gate connects via a horizontal wire to the left, joining node **n2**. The Source connects directly to the ground net **0**. The Drain connects to the vertical branch at node **n3**.
+    *   **Final Connections:**
+        *   Gate: Connected to **n2**
+        *   Source: Connected to **0**
+        *   Drain: Connected to **n3**
+
+*   **Component M3:** This is a PMOS transistor.
+    *   **Analysis:**
+        *   **Pin Identification:** The Gate is the plate on the left. The Source is the top-right pin with the inward-pointing arrow. The Drain is the bottom-right pin.
+        *   **Pin Mapping:** The Source connects to the top rail **VDD**. The Gate is connected to the Drain (diode-connected) at node **n3**.
+    *   **Final Connections:**
+        *   Source: Connected to **VDD**
+        *   Gate: Connected to **n3**
+        *   Drain: Connected to **n3**
+
+*   **Component M4:** This is a PMOS transistor.
+    *   **Analysis:**
+        *   **Pin Identification:** The Gate is the plate on the right (facing the center). The Source is the top-left pin with the inward-pointing arrow. The Drain is the bottom-left pin.
+        *   **Pin Mapping:** The Source connects to the top rail **VDD**. The Gate connects to the common gate line at node **n3**. The Drain connects to node **n1**.
+    *   **Final Connections:**
+        *   Source: Connected to **VDD**
+        *   Gate: Connected to **n3**
+        *   Drain: Connected to **n1**
+
+*   **Component RS:** This is a resistor.
+    *   **Analysis:** This component is placed in the left branch between the drain of M4 and the drain of M1.
+    *   **Final Connections:**
+        *   Top terminal: Connected to **n1**
+        *   Bottom terminal: Connected to **n2**

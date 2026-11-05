@@ -1,0 +1,252 @@
+{
+  "312_netlist_from_descr": {
+    "GED": 140,
+    "report": "Summary: GED = 140.3, Similarity = 69.59%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Extra component: 1 x 'C'",
+    "sim": 0.6958595274225017
+  },
+  "319_netlist_from_descr": {
+    "GED": 80,
+    "report": "Summary: GED = 80.2, Similarity = 75.80%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.7579963789981895
+  },
+  "323_netlist_from_descr": {
+    "GED": 110,
+    "report": "Summary: GED = 110.2, Similarity = 60.78%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 2 x 'R'",
+    "sim": 0.6078291814946619
+  },
+  "324_netlist_from_descr": {
+    "GED": 90,
+    "report": "Summary: GED = 90.2, Similarity = 67.88%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.6787749287749287
+  },
+  "325_netlist_from_descr": {
+    "GED": 50,
+    "report": "Summary: GED = 50.0, Similarity = 84.42%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8442367601246106
+  },
+  "339_netlist_from_descr": {
+    "GED": 40,
+    "report": "Summary: GED = 40.1, Similarity = 84.63%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8463012648524338
+  },
+  "340_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "375_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.1, Similarity = 88.88%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8887659103486442
+  },
+  "394_netlist_from_descr": {
+    "GED": 80,
+    "report": "Summary: GED = 80.0, Similarity = 83.71%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.8371335504885994
+  },
+  "397_netlist_from_descr": {
+    "GED": 170,
+    "report": "Summary: GED = 170.2, Similarity = 59.61%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'C'",
+    "sim": 0.596108210726151
+  },
+  "419_netlist_from_descr": {
+    "GED": 170,
+    "report": "Summary: GED = 170.1, Similarity = 64.69%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.6468756487440316
+  },
+  "420_netlist_from_descr": {
+    "GED": 110,
+    "report": "Summary: GED = 110.3, Similarity = 74.43%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.744261534894505
+  },
+  "439_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "463_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "510_netlist_from_descr": {
+    "GED": 40,
+    "report": "Summary: GED = 40.1, Similarity = 85.74%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8574475648773551
+  },
+  "511_netlist_from_descr": {
+    "GED": 40,
+    "report": "Summary: GED = 40.1, Similarity = 85.21%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8520841018074512
+  },
+  "512_netlist_from_descr": {
+    "GED": 10,
+    "report": "Summary: GED = 10.1, Similarity = 96.27%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.9627443747694577
+  },
+  "513_netlist_from_descr": {
+    "GED": 30,
+    "report": "Summary: GED = 30.1, Similarity = 88.89%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8888888888888888
+  },
+  "514_netlist_from_descr": {
+    "GED": 50,
+    "report": "Summary: GED = 50.1, Similarity = 81.51%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8150609080841639
+  },
+  "515_netlist_from_descr": {
+    "GED": 30,
+    "report": "Summary: GED = 30.1, Similarity = 90.02%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.9001658374792703
+  },
+  "516_netlist_from_descr": {
+    "GED": 10,
+    "report": "Summary: GED = 10.1, Similarity = 94.71%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.9470927187008905
+  },
+  "517_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.1, Similarity = 90.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8999502239920358
+  },
+  "518_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "519_netlist_from_descr": {
+    "GED": 70,
+    "report": "Summary: GED = 70.0, Similarity = 69.70%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.696969696969697
+  },
+  "520_netlist_from_descr": {
+    "GED": 30,
+    "report": "Summary: GED = 30.0, Similarity = 89.32%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8931623931623932
+  },
+  "560_netlist_from_descr": {
+    "GED": 30,
+    "report": "Summary: GED = 30.1, Similarity = 91.89%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Extra component: 1 x 'R'",
+    "sim": 0.9189334769727983
+  },
+  "566_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "567_netlist_from_descr": {
+    "GED": 80,
+    "report": "Summary: GED = 80.2, Similarity = 78.95%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.789501312335958
+  },
+  "618_netlist_from_descr": {
+    "GED": 100,
+    "report": "Summary: GED = 100.0, Similarity = 77.84%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.7783687943262412
+  },
+  "620_netlist_from_descr": {
+    "GED": 10,
+    "report": "Summary: GED = 10.0, Similarity = 96.31%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.96309963099631
+  },
+  "622_netlist_from_descr": {
+    "GED": 30,
+    "report": "Summary: GED = 30.1, Similarity = 92.31%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.9230769230769231
+  },
+  "669_netlist_from_descr": {
+    "GED": 580,
+    "report": "Summary: GED = 580.4, Similarity = 40.96%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.40956256358087473
+  },
+  "700_netlist_from_descr": {
+    "GED": 40,
+    "report": "Summary: GED = 40.1, Similarity = 80.99%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8098624940730204
+  },
+  "714_netlist_from_descr": {
+    "GED": 170,
+    "report": "Summary: GED = 170.0, Similarity = 68.62%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.6862310815799187
+  },
+  "722_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.0, Similarity = 94.75%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.94750656167979
+  },
+  "723_netlist_from_descr": {
+    "GED": 50,
+    "report": "Summary: GED = 50.1, Similarity = 81.48%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8147874306839187
+  },
+  "724_netlist_from_descr": {
+    "GED": 110,
+    "report": "Summary: GED = 110.1, Similarity = 74.46%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.7446068197633959
+  },
+  "727_netlist_from_descr": {
+    "GED": 330,
+    "report": "Summary: GED = 330.1, Similarity = 54.25%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.5424809424809425
+  },
+  "765_netlist_from_descr": {
+    "GED": 80,
+    "report": "Summary: GED = 80.1, Similarity = 78.97%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.789708584930428
+  },
+  "768_netlist_from_descr": {
+    "GED": 80,
+    "report": "Summary: GED = 80.1, Similarity = 76.50%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.7650337342329129
+  },
+  "769_netlist_from_descr": {
+    "GED": 230,
+    "report": "Summary: GED = 230.1, Similarity = 61.75%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.6174563591022444
+  },
+  "771_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.0, Similarity = 85.80%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8579545454545454
+  },
+  "779_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "784_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "791_netlist_from_descr": {
+    "GED": 80,
+    "report": "Summary: GED = 80.2, Similarity = 65.19%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.6519097222222222
+  },
+  "821_netlist_from_descr": {
+    "GED": 170,
+    "report": "Summary: GED = 170.0, Similarity = 71.24%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.7123519458544839
+  },
+  "amplifier_netlist_from_descr": {
+    "GED": 50,
+    "report": "Summary: GED = 50.1, Similarity = 89.80%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.898025646244657
+  },
+  "electronic_netlist_from_descr": {
+    "GED": 380,
+    "report": "Summary: GED = 380.3, Similarity = 51.96%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'L'\n  - Missing component: 1 x 'C'\n  - Missing component: 1 x 'POT'",
+    "sim": 0.5196412782619679
+  },
+  "g015_netlist_from_descr": {
+    "GED": 210,
+    "report": "Summary: GED = 210.1, Similarity = 61.93%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Extra component: 2 x 'M'",
+    "sim": 0.6193150933140061
+  },
+  "Multivibrator_netlist_from_descr": {
+    "GED": 260,
+    "report": "Summary: GED = 260.3, Similarity = 57.42%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.5741861606412564
+  }
+}

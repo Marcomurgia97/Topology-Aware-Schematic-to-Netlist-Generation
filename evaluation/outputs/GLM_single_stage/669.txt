@@ -1,0 +1,13 @@
+M1 Vout1 Vin N1 N1 PMOS
+M2 Vout1 Vout1 N1 N1 PMOS
+M9 Vb Vout1 Vb 0 NMOS
+M7 Vb Vb 0 0 NMOS
+M8 Vb 0 0 0 NMOS
+M3 VDD Vout1 Vout1 Vout1 PMOS
+M4 VDD Vout2 Vout2 Vout2 PMOS
+M5 M6gate Vout1 Vout1 Vout1 PMOS
+M6 Vout2 M6gate 0 0 NMOS
+M12 M10gate Vout1 Vout1 Vout1 PMOS
+M10 0 M10gate 0 0 NMOS
+M13 Vout2 Vout2 Vout2 Vout2 NMOS
+M11 0 Vout2 0 0 NMOS

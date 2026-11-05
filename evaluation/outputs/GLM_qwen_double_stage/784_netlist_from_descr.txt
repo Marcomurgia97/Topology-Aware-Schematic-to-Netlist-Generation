@@ -1,0 +1,2 @@
+R_on Vin Vout VALUE
+C_H Vout 0 VALUE

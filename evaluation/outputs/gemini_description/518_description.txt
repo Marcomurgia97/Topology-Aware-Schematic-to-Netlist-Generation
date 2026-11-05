@@ -1,0 +1,30 @@
+**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are Vin, Vout, VDD, and 0 (ground).
+Several junctions connect multiple components, but verification confirms they are all extensions of labeled nets:
+- The node connecting the input terminal, the gate of transistor M1, and one side of resistor RF is directly wired to the label 'Vin'. It is therefore part of the **Vin** net.
+- The node connecting the drain of transistor M1, the other side of resistor RF, one side of resistor RD, and the output terminal is directly wired to the label 'Vout'. It is therefore part of the **Vout** net.
+- The node connecting the top of resistor RD is directly wired to the label 'VDD'. It is therefore part of the **VDD** net.
+- The node connecting the source of transistor M1 is directly wired to the ground symbol. It is therefore part of the **0** net.
+No new distinct electrical points were found.
+The final net inventory is: **Vin, Vout, VDD, 0**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: Gate is connected to Vin. Source is connected to 0. Drain is connected to Vout.
+    - **Final Connections:**
+        - Its **gate** is connected to the **Vin** net.
+        - Its **source** is connected to the **0** (ground) net.
+        - Its **drain** is connected to the **Vout** net.
+
+- **Component RF:** This is a resistor acting as a feedback element.
+    - **Final Connections:**
+        - One terminal is connected to the **Vin** net.
+        - The other terminal is connected to the **Vout** net.
+
+- **Component RD:** This is a resistor acting as the drain load.
+    - **Final Connections:**
+        - One terminal is connected to the **VDD** net.
+        - The other terminal is connected to the **Vout** net.

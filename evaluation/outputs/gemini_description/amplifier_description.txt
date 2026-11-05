@@ -1,0 +1,64 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The schematic explicitly labels the following nets:
+    *   **Vcc**: The positive power supply voltage rail at the top of the circuit.
+    *   **Input**: The signal input terminal on the left side.
+    *   **Output**: The signal output terminal on the right side.
+    *   **0**: The ground reference, indicated by the ground symbols connected to the bottom of various components.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Base Node:** There is a central junction connecting the bottom of resistor R1, the top of resistor R2, one side of capacitor C1, and the Base (B) of the transistor. A check confirms this node is not directly connected to Vcc, Input, Output, or 0 without passing through a component. Thus, it is a distinct net.
+    *   **Collector Node:** There is a junction connecting the bottom of resistor RL, one side of capacitor C3, and the Collector (C) of the transistor. This node is electrically distinct from all labeled nets.
+    *   **Emitter Node:** There is a junction connecting the Emitter (E) of the transistor, the top of resistor RE, and the top of capacitor C2. This node is electrically distinct from all labeled nets.
+
+3.  **Assign Names and Finalize Inventory:**
+    The distinct unlabeled nodes identified above are assigned sequential names:
+    *   The node at the transistor Base is named **n1**.
+    *   The node at the transistor Collector is named **n2**.
+    *   The node at the transistor Emitter is named **n3**.
+
+    **Final Net Inventory:** Vcc, Input, Output, 0, n1, n2, n3.
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component C1:** This is a coupling capacitor located at the input.
+    *   **Final Connections:**
+        *   One terminal is connected to the **Input** net.
+        *   The other terminal is connected to the **n1** net.
+
+*   **Component R1:** This is a bias resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the **Vcc** net.
+        *   The other terminal is connected to the **n1** net.
+
+*   **Component R2:** This is a bias resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the **n1** net.
+        *   The other terminal is connected to the **0** (ground) net.
+
+*   **Component Transistor:** This is an NPN Bipolar Junction Transistor (BJT). The symbol shows the arrow on the emitter pointing outward.
+    *   **Final Connections:**
+        *   Its **Base** (pin B) is connected to the **n1** net.
+        *   Its **Collector** (pin C) is connected to the **n2** net.
+        *   Its **Emitter** (pin E) is connected to the **n3** net.
+
+*   **Component RL:** This is the load resistor connected to the collector.
+    *   **Final Connections:**
+        *   One terminal is connected to the **Vcc** net.
+        *   The other terminal is connected to the **n2** net.
+
+*   **Component C3:** This is a coupling capacitor located at the output.
+    *   **Final Connections:**
+        *   One terminal is connected to the **n2** net.
+        *   The other terminal is connected to the **Output** net.
+
+*   **Component RE:** This is the emitter resistor.
+    *   **Final Connections:**
+        *   One terminal is connected to the **n3** net.
+        *   The other terminal is connected to the **0** (ground) net.
+
+*   **Component C2:** This is a bypass capacitor connected in parallel with RE.
+    *   **Final Connections:**
+        *   One terminal is connected to the **n3** net.
+        *   The other terminal is connected to the **0** (ground) net.

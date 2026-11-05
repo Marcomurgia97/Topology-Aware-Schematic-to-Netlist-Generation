@@ -1,0 +1,5 @@
+M1 n1 Vin,CM n3 n3 NMOS
+M2 n2 Vin,CM n3 n3 NMOS
+M3 n3 Vb 0 0 NMOS
+RLeftRD VDD n1 VALUE
+RRightRD VDD n2 VALUE

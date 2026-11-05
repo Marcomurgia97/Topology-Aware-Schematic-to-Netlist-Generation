@@ -1,0 +1,4 @@
+R_D VDD n1 VALUE
+M1 n1 Vin n1 n1 MOSFET
+R1_top Vout n1 VALUE
+R1_bottom n1 0 VALUE

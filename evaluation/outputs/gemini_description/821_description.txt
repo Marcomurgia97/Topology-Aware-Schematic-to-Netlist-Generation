@@ -1,0 +1,67 @@
+**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are VDD, Vout, E, F, G, and 0 (ground).
+- The node labeled **E** connects the drain of M1, the gate of M2, and the local resistor/capacitor pair.
+- The node labeled **F** connects the drain of M2, the gate of M3, and the local resistor/capacitor pair.
+- The node labeled **G** is directly connected to the output terminal **Vout**. Furthermore, a feedback wire runs from this node, loops under the circuit, and connects to the gate of M1. Since these points are all connected by wire, they form a single net. I will refer to this combined net as **Net G_Vout**.
+- The ground symbols are all connected to the common net **0**.
+
+The final net inventory is: **VDD**, **0**, **Net E**, **Net F**, **Net G_Vout**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component Left Resistor (R_D):** This is a resistor located in the first stage.
+    - **Final Connections:**
+        - One terminal is connected to the 'VDD' net.
+        - The other terminal is connected to the 'Net E' node.
+
+- **Component Left Capacitor (C_L):** This is a capacitor located in the first stage.
+    - **Final Connections:**
+        - One terminal is connected to the 'Net E' node.
+        - The other terminal is connected to 0 (ground).
+
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, the Gate is the left pin. The Source is the bottom-right pin with the outward arrow. The Drain is the top-right pin.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Net G_Vout' node (providing the feedback loop).
+        - Its **source** is connected to 0 (ground).
+        - Its **drain** is connected to the 'Net E' node.
+
+- **Component Middle Resistor (R_D):** This is a resistor located in the second stage.
+    - **Final Connections:**
+        - One terminal is connected to the 'VDD' net.
+        - The other terminal is connected to the 'Net F' node.
+
+- **Component Middle Capacitor (C_L):** This is a capacitor located in the second stage.
+    - **Final Connections:**
+        - One terminal is connected to the 'Net F' node.
+        - The other terminal is connected to 0 (ground).
+
+- **Component M2:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M2, the Gate is the left pin. The Source is the bottom-right pin with the outward arrow. The Drain is the top-right pin.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Net E' node.
+        - Its **source** is connected to 0 (ground).
+        - Its **drain** is connected to the 'Net F' node.
+
+- **Component Right Resistor (R_D):** This is a resistor located in the third stage.
+    - **Final Connections:**
+        - One terminal is connected to the 'VDD' net.
+        - The other terminal is connected to the 'Net G_Vout' node.
+
+- **Component Right Capacitor (C_L):** This is a capacitor located in the third stage.
+    - **Final Connections:**
+        - One terminal is connected to the 'Net G_Vout' node.
+        - The other terminal is connected to 0 (ground).
+
+- **Component M3:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M3, the Gate is the left pin. The Source is the bottom-right pin with the outward arrow. The Drain is the top-right pin.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Net F' node.
+        - Its **source** is connected to 0 (ground).
+        - Its **drain** is connected to the 'Net G_Vout' node.

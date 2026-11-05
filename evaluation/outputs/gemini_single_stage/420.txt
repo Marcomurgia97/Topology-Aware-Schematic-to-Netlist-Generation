@@ -1,0 +1,7 @@
+M1 net_mid net_gate_m1 0 0 NMOS
+M2 Vout Vin net_mid net_mid NMOS
+M3 Vout net_gate_m3 VDD VDD PMOS
+R1 net_mid net_gate_m1 VALUE
+R2 Vb net_gate_m3 VALUE
+C1 net_gate_m1 0 VALUE
+C2 net_mid net_gate_m3 VALUE

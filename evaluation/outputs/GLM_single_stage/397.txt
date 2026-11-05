@@ -1,0 +1,6 @@
+M1 Vx Vin 0 0
+M2 VDD Vb Node1 Node1
+M3 Node2 Vx 0 0
+M4 VDD Vb Node2 Node2
+C1 Vx 0 CL
+C2 Vout 0 CL

@@ -1,0 +1,9 @@
+M1 N_bias_n N_bias_n 0 0 NMOS
+M2 N_bias_p N_bias_n N_source_m2 N_source_m2 NMOS
+Rs N_source_m2 0 RS
+M3 N_bias_p N_bias_p VDD VDD PMOS
+M4 N_bias_n N_bias_p VDD VDD PMOS
+M5 X N_bias_p 0 0 NMOS
+Ra VDD N_gate_m6 Ra
+Rb N_gate_m6 X Rb
+M6 X N_gate_m6 0 0 NMOS

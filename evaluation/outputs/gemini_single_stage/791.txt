@@ -1,0 +1,5 @@
+C1 1 0 C1
+Cin 1 0 Cin
+C2 1 2 C2
+CL 2 0 CL
+R1 2 0 {(1/Gm)*((C1+C2+Cin)/C2)}

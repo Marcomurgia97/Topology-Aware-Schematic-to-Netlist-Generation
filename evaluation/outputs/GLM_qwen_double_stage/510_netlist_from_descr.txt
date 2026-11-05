@@ -1,0 +1,4 @@
+M1 n1 Vin 0 0 NMOS
+M2 VDD Vb n1 n1 NMOS
+R_D VDD Node_A 1k
+R_F Node_A Vout 1k

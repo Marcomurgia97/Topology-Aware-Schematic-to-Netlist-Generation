@@ -1,0 +1,5 @@
+M1 Vout Vout VDD VDD PMOS
+R1 Vout 0 VALUE
+R2 Vout 0 VALUE
+C1 VDD Vout VALUE
+C2 Vout 0 VALUE

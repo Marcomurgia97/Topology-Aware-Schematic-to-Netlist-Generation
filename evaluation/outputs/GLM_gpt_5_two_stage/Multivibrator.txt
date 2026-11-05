@@ -1,0 +1,11 @@
+B1 n_top 0 V=9
+R1 n_top n2 470
+L1 n2 n2 LED
+R2 n_top n2 47k
+C1 n2 n1 10u
+Q1 n_c2q1 n2 0 NPN
+R3 n_top n2 47k
+C2 n2 n2 10u
+Q2 n1 n2 n3 NPN
+R4 n_top n3 470
+L2 n3 n3 LED

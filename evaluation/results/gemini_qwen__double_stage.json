@@ -1,0 +1,252 @@
+{
+  "312_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "319_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 100.1, Similarity = 72.31%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections) *Correct for human expert.",
+    "sim": 1.0
+  },
+  "323_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "324_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "325_description_netlist_from_descr": {
+    "GED": 50,
+    "report": "Summary: GED = 50.0, Similarity = 83.92%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 1 x 'R'",
+    "sim": 0.8392282958199357
+  },
+  "339_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "340_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "375_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "394_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "397_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "419_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "420_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "439_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "463_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "510_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "511_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "512_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "513_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "514_description_netlist_from_descr": {
+    "GED": 30,
+    "report": "Summary: GED = 30.0, Similarity = 89.32%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.8932384341637011
+  },
+  "515_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "516_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "517_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "518_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "519_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "520_description_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.0, Similarity = 92.88%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.9287749287749287
+  },
+  "560_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "566_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "567_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "618_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "620_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "622_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "669_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "700_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "714_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "722_description_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.0, Similarity = 94.75%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.94750656167979
+  },
+  "723_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "724_description_netlist_from_descr": {
+    "GED": 90,
+    "report": "Summary: GED = 90.0, Similarity = 79.60%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.7960108794197643
+  },
+  "727_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "765_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "768_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "769_description_netlist_from_descr": {
+    "GED": 20,
+    "report": "Summary: GED = 20.0, Similarity = 96.78%\n----------------------------------------\n---------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.9678146121660766
+  },
+  "771_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "779_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "784_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "791_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "821_description_netlist_from_descr": {
+    "GED": 250,
+    "report": "Summary: GED = 250.0, Similarity = 52.02%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 2 x 'C'\n  - Missing component: 2 x 'R'",
+    "sim": 0.5201535508637236
+  },
+  "amplifier_description_netlist_from_descr": {
+    "GED": 0,
+    "report": "Summary: GED = 0.0, Similarity = 100.00%\n----------------------------------------\n---------------------------------------------------------------------------------\nStatus: Perfect Match (Correct).",
+    "sim": 1.0
+  },
+  "electronic_description_netlist_from_descr": {
+    "GED": 170,
+    "report": "Summary: GED = 170.1, Similarity = 79.30%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Missing component: 2 x 'L'\n  - Missing component: 1 x 'POT'\n  - Extra component: 1 x 'R'",
+    "sim": 0.793040515877844
+  },
+  "g015_description_netlist_from_descr": {
+    "GED": 310,
+    "report": "Summary: GED = 310.0, Similarity = 44.84%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Extra component: 2 x 'M'",
+    "sim": 0.4483985765124555
+  },
+  "Multivibrator_description_netlist_from_descr": {
+    "GED": 150,
+    "report": "Summary: GED = 150.0, Similarity = 76.62%\n----------------------------------------\n----------------------------------------------------------------------------------\nErrors details:\n  - Topology error (wrong connections).",
+    "sim": 0.766209476309227
+  }
+}

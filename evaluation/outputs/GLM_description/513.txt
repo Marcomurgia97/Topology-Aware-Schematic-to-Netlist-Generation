@@ -1,0 +1,30 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are VDD, Vout, Vin, and 0 (ground).
+All unlabeled nodes are verified to be directly connected to the labeled nets from step 1. Therefore, no new distinct nets are created.
+The final net inventory is: VDD, Vout, Vin, 0.
+
+**PHASE 2: Description of Components and Connections**
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side (Gate) and two on the other (Source and Drain). The pin with the arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: Gate is connected to Vin. Source is connected to 0 (ground). Drain is connected to Vout.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Vin' node.
+        - Its **source** is connected to 0 (ground).
+        - Its **drain** is connected to Vout.
+- **Component M2:** This is a PMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side (Gate) and two on the other (Source and Drain). The pin with the arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M2, applying this logic, I have identified: Gate is connected to Vin. Source is connected to Vout. Drain is connected to VDD.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Vin' node.
+        - Its **source** is connected to Vout.
+        - Its **drain** is connected to VDD.
+- **Component RF:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to Vout.
+        - The other end is connected to 0 (ground).
+- **Component Rs:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to 0 (ground).
+        - The other end is connected to the node between M1's source and ground (which is 0).<|end_of_box|>

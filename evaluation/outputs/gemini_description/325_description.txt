@@ -1,0 +1,45 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+The primary labeled nets in the schematic are **VDD** (the positive supply rail), **X**, **Y**, and **0** (ground, indicated by the ground symbols).
+
+I have analyzed the schematic for unlabeled nodes:
+1.  **M2 Gate/Drain Connection:** The node connecting the drain of transistor M2, the gate of transistor M2, the gate of transistor M1, and the bottom of the left resistor R1 is explicitly labeled **X**. A check confirms all these points share the same electrical potential.
+2.  **M1 Source Connection:** There is a node connecting the source of transistor M1 and the top of resistor R2. This node is not directly connected to any labeled net (VDD, X, Y, or 0). Therefore, it is assigned the new unique name **n1**.
+3.  **M2 Source Connection:** The source of transistor M2 is directly connected to the ground symbol. This is part of net **0**.
+
+The final net inventory is: **VDD, 0, X, Y, n1**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component Left Resistor R1:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the **VDD** net.
+        - The other terminal is connected to the **X** net.
+
+- **Component Right Resistor R1:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the **VDD** net.
+        - The other terminal is connected to the **Y** net.
+
+- **Component Resistor R2:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the **n1** net.
+        - The other terminal is connected to the **0** (ground) net.
+
+- **Component M2:** This is an NMOS transistor.
+    - **Analysis:**
+        - **Pin identification logic:** The symbol has a gate pin on one side and two channel pins on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow pointing outward is the Source. The remaining pin is the Drain.
+        - **Pin Mapping:** Following the wires, the gate is tied directly to the drain (diode-connected). The drain connects to the load resistor at node X. The source connects to ground.
+    - **Final Connections:**
+        - Its **drain** is connected to the **X** net.
+        - Its **gate** is connected to the **X** net.
+        - Its **source** is connected to the **0** (ground) net.
+
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - **Pin identification logic:** The symbol has a gate pin on one side and two channel pins on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow pointing outward is the Source. The remaining pin is the Drain.
+        - **Pin Mapping:** The gate connects to the shared gate line coming from M2. The drain connects to the output branch resistor. The source connects to the degeneration resistor R2.
+    - **Final Connections:**
+        - Its **gate** is connected to the **X** net.
+        - Its **drain** is connected to the **Y** net.
+        - Its **source** is connected to the **n1** net.

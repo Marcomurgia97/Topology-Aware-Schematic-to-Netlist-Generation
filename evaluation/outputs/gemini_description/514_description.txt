@@ -1,0 +1,37 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:** The schematic clearly labels the following nets: `VDD` (top supply rail), `Vin` (input), `Vout` (output), and `0` (ground symbol at the bottom).
+2.  **Identify and Verify Unlabeled Nodes:** I have identified one significant unlabeled junction connecting the source of transistor `M1`, the source of transistor `M2`, and the top of resistor `Rs`.
+    -   **Verification Check:** Is this node directly connected to `VDD`? No. To `Vin`? No. To `Vout`? No. To `0`? No (separated by `Rs`).
+    -   Since it is a distinct electrical point, it is assigned the new name: `n1`.
+3.  **Final Net Inventory:** The verified nets are: `VDD`, `Vin`, `Vout`, `0`, and `n1`.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   **Pin identification logic:** A MOSFET symbol has one pin on one side (Gate) and two on the other. On the channel side, the pin with the outward-pointing arrow is the Source, and the remaining pin is the Drain.
+        -   **Pin Mapping:** Based on the symbol, the Gate is on the left, connected to `Vin`. The Drain is the top pin, connected to `Vout`. The Source is the bottom pin (with the arrow), connected to `n1`.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the `Vin` net.
+        -   Its **drain** is connected to the `Vout` net.
+        -   Its **source** is connected to the `n1` net.
+
+-   **Component M2:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   **Pin identification logic:** Applying the standard MOSFET rule, the single pin on the left is the Gate. The pin with the outward-pointing arrow is the Source. The remaining pin is the Drain.
+        -   **Pin Mapping:** The Gate is connected to the node labeled `Vout`. The Drain (top pin) connects to the `VDD` rail. The Source (bottom pin with arrow) connects to a wire that runs down the right side of the circuit and joins `n1`.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the `Vout` net.
+        -   Its **drain** is connected to the `VDD` net.
+        -   Its **source** is connected to the `n1` net.
+
+-   **Component RD:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the `VDD` net.
+        -   The other terminal is connected to the `Vout` net.
+
+-   **Component Rs:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the `n1` net.
+        -   The other terminal is connected to the `0` (ground) net.

@@ -1,0 +1,25 @@
+**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are $V_{in}$, $V_{out}$, $V_{DD}$, and $V_b$.
+An unlabeled node connecting the gate of transistor $M_1$ and one side of resistor $R_G$ was identified. A check confirms it is NOT directly connected to any other labeled net (it is separated from the $V_b$ terminal by the resistor component $R_G$). Therefore, it is assigned the new name `n1`.
+The final net inventory is: $V_{in}$, $V_{out}$, $V_{DD}$, $V_b$, `n1`.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side (Gate) and two on the other. The pin with the outward-pointing arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, the Gate is the pin on the right side connected to net `n1`. On the left side, the bottom pin with the arrow is the Source, connected to $V_{in}$. The top pin without the arrow is the Drain, connected to $V_{out}$.
+    - **Final Connections:**
+        - Its **gate** is connected to the `n1` node.
+        - Its **source** is connected to the $V_{in}$ net.
+        - Its **drain** is connected to the $V_{out}$ net.
+
+- **Component RD:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the $V_{DD}$ net.
+        - The other terminal is connected to the $V_{out}$ net.
+
+- **Component RG:** This is a resistor.
+    - **Final Connections:**
+        - One terminal is connected to the $V_b$ net.
+        - The other terminal is connected to the `n1` net.

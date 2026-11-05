@@ -1,0 +1,7 @@
+C2 n1 gate_M3
+M3 n2 n1 VDD PMOS
+R2 n2 n1
+C1 n3 Vout
+M2 Vout Vb n3 NMOS
+R1 Vb n3
+M1 n3 Vin 0 0 NMOS

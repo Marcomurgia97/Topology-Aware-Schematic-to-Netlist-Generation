@@ -1,0 +1,43 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are VDD, Vout, Vin, and 0 (ground).
+An unlabeled node connecting Rs, Ce, and Rz was identified. A check confirms it is NOT directly connected to any other labeled net. Therefore, it is assigned the new name n1.
+Another unlabeled node connecting Rz, Cc, and M9's drain was identified. A check confirms it is NOT directly connected to any other labeled net. Therefore, it is assigned the new name n2.
+The final net inventory is: VDD, Vout, Vin, 0, n1, n2.
+
+**PHASE 2: Description of Components and Connections**
+- **Component Vin:** This is a voltage source.
+    - **Final Connections:**
+        - Its positive terminal is connected to the 'n1' node.
+        - Its negative terminal is connected to 0 (ground).
+- **Component Rs:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to the positive terminal of Vin (net 'n1').
+        - The other end is connected to net 'n1'.
+- **Component Ce:** This is a capacitor.
+    - **Final Connections:**
+        - One end is connected to net 'n1'.
+        - The other end is connected to VDD.
+- **Component Rz:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to net 'n1'.
+        - The other end is connected to net 'n2'.
+- **Component Cc:** This is a capacitor.
+    - **Final Connections:**
+        - One end is connected to net 'n2'.
+        - The other end is connected to net 'Vout'.
+- **Component M9:** This is a MOSFET.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M9, applying this logic, I have identified: Gate is connected to net 'n1'. Source is connected to VDD. Drain is connected to net 'n2'.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'n1' node.
+        - Its **source** is connected to the 'VDD' node.
+        - Its **drain** is connected to the 'n2' node.
+- **Component RL:** This is a resistor.
+    - **Final Connections:**
+        - One end is connected to net 'n2'.
+        - The other end is connected to 0 (ground).
+- **Component CL:** This is a capacitor.
+    - **Final Connections:**
+        - One end is connected to net 'Vout'.
+        - The other end is connected to 0 (ground).<|end_of_box|>

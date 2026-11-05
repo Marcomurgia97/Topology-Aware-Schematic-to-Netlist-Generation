@@ -1,0 +1,8 @@
+C1 Vin B
+R1 V+ B
+R2 B 0
+Rc V+ C
+C_out C Vout
+Q1 C B E
+Re E 0
+Ce E 0

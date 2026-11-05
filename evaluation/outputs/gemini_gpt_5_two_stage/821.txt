@@ -1,0 +1,9 @@
+R_D1 VDD Net_E VALUE
+C_L1 Net_E 0 VALUE
+M1 Net_E Net_G_Vout 0 0 NMOS
+R_D2 VDD Net_F VALUE
+C_L2 Net_F 0 VALUE
+M2 Net_F Net_E 0 0 NMOS
+R_D3 VDD Net_G_Vout VALUE
+C_L3 Net_G_Vout 0 VALUE
+M3 Net_G_Vout Net_F 0 0 NMOS

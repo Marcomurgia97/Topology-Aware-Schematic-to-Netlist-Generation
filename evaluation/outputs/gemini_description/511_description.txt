@@ -1,0 +1,43 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **Labeled Nets:**
+    *   **Vin:** The input voltage node.
+    *   **VDD:** The positive power supply rail.
+    *   **Vout:** The output voltage node.
+    *   **Vb:** A bias voltage node.
+    *   **0:** Ground (indicated by the ground symbols at the bottom of M1 and RD).
+
+2.  **Unlabeled Nodes:**
+    *   A junction connecting the top of the M1 drain, the bottom of resistor Rs, and the top terminal of transistor M2. This node is not directly connected to any labeled net. It is assigned the new name **n1**.
+
+**Final Net Inventory:** Vin, VDD, Vout, Vb, 0, n1.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an N-channel MOSFET (NMOS).
+    -   **Analysis:**
+        -   **Pin Identification Logic:** The single pin on the left side is the Gate. The vertical line on the right represents the channel. The pin with the arrow pointing outwards is the Source. The remaining pin is the Drain.
+        -   **Pin Mapping:** The arrow is on the bottom terminal connected to ground. Thus, the Source is connected to net 0. The Gate is connected to Vin. The Drain is the top terminal connected to net n1.
+    -   **Final Connections:**
+        -   Its **gate** is connected to **Vin**.
+        -   Its **source** is connected to **0** (ground).
+        -   Its **drain** is connected to **n1**.
+
+-   **Component Rs:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to **VDD**.
+        -   The other terminal is connected to **n1**.
+
+-   **Component M2:** This is an N-channel MOSFET (NMOS).
+    -   **Analysis:**
+        -   **Pin Identification Logic:** The single pin on the right side is the Gate. On the left (channel) side, the arrow is located on the top terminal and points outwards (to the left), away from the vertical channel bar. This identifies the device as an NMOS and the top terminal as the Source. The bottom terminal is the Drain.
+        -   **Pin Mapping:** The Gate is connected to the labeled net Vb. The Source (top terminal with arrow) is connected to n1. The Drain (bottom terminal) is connected to Vout.
+    -   **Final Connections:**
+        -   Its **gate** is connected to **Vb**.
+        -   Its **source** is connected to **n1**.
+        -   Its **drain** is connected to **Vout**.
+
+-   **Component RD:** This is a resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to **Vout**.
+        -   The other terminal is connected to **0** (ground).

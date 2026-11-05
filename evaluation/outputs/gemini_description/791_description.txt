@@ -1,0 +1,38 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The only explicitly labeled potential in the circuit is the ground connection, indicated by standard ground symbols at the bottom of four separate branches. This net is designated as **0**.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Node 1:** There is a junction connecting the top plate of capacitor **C1**, the top plate of capacitor **Cin**, and the left plate of capacitor **C2**. This node is not directly connected to ground or any other labeled net. It is a distinct electrical point. This net is assigned the name **n1**.
+    *   **Node 2:** There is a junction connecting the right plate of capacitor **C2**, the top terminal of the resistor, and the top plate of capacitor **CL**. This node is not directly connected to ground or any other labeled net. It is a distinct electrical point. This net is assigned the name **n2**.
+
+3.  **Final Net Inventory:**
+    The verified nets are: **0** (ground), **n1**, and **n2**.
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component C1:** This is a capacitor labeled **C1**.
+    *   **Final Connections:**
+        *   Its top terminal is connected to the **n1** node.
+        *   Its bottom terminal is connected to **0** (ground).
+
+*   **Component Cin:** This is a capacitor labeled **Cin**.
+    *   **Final Connections:**
+        *   Its top terminal is connected to the **n1** node.
+        *   Its bottom terminal is connected to **0** (ground).
+
+*   **Component C2:** This is a capacitor labeled **C2**.
+    *   **Final Connections:**
+        *   Its left terminal is connected to the **n1** node.
+        *   Its right terminal is connected to the **n2** node.
+
+*   **Component Resistor:** This is a resistor. Its value is indicated by the mathematical expression $\frac{1}{G_m} \frac{C_1 + C_2 + C_{in}}{C_2}$ placed next to it.
+    *   **Final Connections:**
+        *   Its top terminal is connected to the **n2** node.
+        *   Its bottom terminal is connected to **0** (ground).
+
+*   **Component CL:** This is a capacitor labeled **CL**.
+    *   **Final Connections:**
+        *   Its top terminal is connected to the **n2** node.
+        *   Its bottom terminal is connected to **0** (ground).

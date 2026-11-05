@@ -1,0 +1,11 @@
+V1 9V+ 0 9
+R1 9V+ n1 470
+DL1 n1 n2 LED
+C1 n2 n3 10u
+Q1 n2 n4 0 NPN
+R2 9V+ n3 47k
+R3 9V+ n4 47k
+C2 n5 n4 10u
+Q2 n5 n3 0 NPN
+DL2 n6 n5 LED
+R4 9V+ n6 470

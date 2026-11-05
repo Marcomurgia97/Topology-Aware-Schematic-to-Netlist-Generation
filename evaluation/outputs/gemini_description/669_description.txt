@@ -1,0 +1,119 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **Labeled Nets:**
+    *   **VDD**: The positive power supply rail at the top.
+    *   **0**: The ground reference connected to the sources of $M_7, M_8, M_{10}, M_{11}$.
+    *   **Vout1**: The output node on the left branch.
+    *   **Vout2**: The output node on the right branch.
+    *   **Vb**: The bias voltage terminal connected to the gate of $M_9$.
+    *   **Vin_pos**: The top input terminal designated by the $V_{in}$ label.
+    *   **Vin_neg**: The bottom input terminal below the $V_{in}$ label.
+
+2.  **Unlabeled Nodes (Identification & Verification):**
+    *   **n1**: Junction connecting the Source of $M_1$, Source of $M_2$, and Drain of $M_9$. Verified as isolated from labeled nets.
+    *   **n2**: Junction connecting the Source of $M_9$, Drain of $M_7$, and Drain of $M_8$. Verified as isolated.
+    *   **n3**: Junction connecting the Drain of $M_1$, Drain of $M_3$, and Source of $M_5$. Verified as isolated.
+    *   **n4**: Junction connecting the Drain of $M_2$, Drain of $M_4$, and Source of $M_6$. Verified as isolated.
+    *   **n5**: Junction connecting the Source of $M_{12}$ and Drain of $M_{10}$. Verified as isolated.
+    *   **n6**: Junction connecting the Source of $M_{13}$ and Drain of $M_{11}$. Verified as isolated.
+    *   **n7**: Shared bias line connecting the Gates of $M_3$ and $M_4$. Verified as isolated.
+    *   **n8**: Shared bias line connecting the Gates of $M_5$ and $M_6$. Verified as isolated.
+    *   **n9**: Shared bias line connecting the Gates of $M_{12}$ and $M_{13}$. Verified as isolated.
+    *   **n10**: Shared bias line connecting the Gates of $M_{10}$ and $M_{11}$. Verified as isolated.
+
+**Final Net Inventory:** VDD, 0, Vout1, Vout2, Vb, Vin_pos, Vin_neg, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10.
+
+---
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **Vin_pos**.
+        -   **Source** connected to **n1**.
+        -   **Drain** connected to **n3**.
+
+-   **Component M2:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **Vin_neg**.
+        -   **Source** connected to **n1**.
+        -   **Drain** connected to **n4**.
+
+-   **Component M3:** This is a PMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing in is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n7**.
+        -   **Source** connected to **VDD**.
+        -   **Drain** connected to **n3**.
+
+-   **Component M4:** This is a PMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing in is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n7**.
+        -   **Source** connected to **VDD**.
+        -   **Drain** connected to **n4**.
+
+-   **Component M5:** This is a PMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing in is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n8**.
+        -   **Source** connected to **n3**.
+        -   **Drain** connected to **Vout1**.
+
+-   **Component M6:** This is a PMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing in is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n8**.
+        -   **Source** connected to **n4**.
+        -   **Drain** connected to **Vout2**.
+
+-   **Component M7:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **Vout2**.
+        -   **Source** connected to **0** (ground).
+        -   **Drain** connected to **n2**.
+
+-   **Component M8:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **Vout1**.
+        -   **Source** connected to **0** (ground).
+        -   **Drain** connected to **n2**.
+
+-   **Component M9:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **Vb**.
+        -   **Source** connected to **n2**.
+        -   **Drain** connected to **n1**.
+
+-   **Component M10:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n10**.
+        -   **Source** connected to **0** (ground).
+        -   **Drain** connected to **n5**.
+
+-   **Component M11:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n10**.
+        -   **Source** connected to **0** (ground).
+        -   **Drain** connected to **n6**.
+
+-   **Component M12:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n9**.
+        -   **Source** connected to **n5**.
+        -   **Drain** connected to **Vout1**.
+
+-   **Component M13:** This is an NMOS transistor.
+    -   **Analysis:** The pin with the arrow pointing out is the Source. The isolated pin is the Gate. The remaining pin is the Drain.
+    -   **Final Connections:**
+        -   **Gate** connected to **n9**.
+        -   **Source** connected to **n6**.
+        -   **Drain** connected to **Vout2**.

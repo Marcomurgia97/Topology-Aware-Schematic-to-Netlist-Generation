@@ -1,0 +1,99 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    The schematic clearly labels the power supply terminals. The positive terminal connects to a rail we will label **Vcc**. The negative terminal connects to the bottom rail which has a ground symbol; this is labeled **0** (ground).
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Node at Antenna:** A junction connects the Antenna, the top of inductor L1, the top of variable capacitor C1, and the anode of diode D1. This node is not directly connected to Vcc or 0. It is assigned the name **n1**.
+    *   **Node after Diode:** A junction connects the cathode of diode D1 and one side of capacitor C2. This node is distinct. It is assigned the name **n2**.
+    *   **Node at Q1 Base:** A junction connects the other side of capacitor C2, the base of transistor Q1, and one end of resistor R1. This node is distinct. It is assigned the name **n3**.
+    *   **Node at Q1 Collector:** A junction connects the collector of transistor Q1, the top end of variable resistor R2, and the top of the primary winding of transformer T1. This node is distinct. It is assigned the name **n4**.
+    *   **Node at Q2 Base:** A junction connects the top of the secondary winding of transformer T1 and the base of transistor Q2. This node is distinct. It is assigned the name **n5**.
+    *   **Node at Q2 Collector:** A junction connects the collector of transistor Q2 and one end of resistor R4. This node is distinct. It is assigned the name **n6**.
+    *   **Node at Headphones:** A junction connects the other end of resistor R4 and one terminal of the headphones. This node is distinct. It is assigned the name **n7**.
+
+3.  **Final Net Inventory:**
+    The final verified net list is: **Vcc**, **0**, **n1**, **n2**, **n3**, **n4**, **n5**, **n6**, **n7**.
+
+---
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component Antenna:** This is an antenna symbol.
+    *   **Final Connections:**
+        *   It is connected to the **n1** node.
+
+*   **Component L1:** This is an inductor.
+    *   **Final Connections:**
+        *   One end is connected to the **n1** node.
+        *   The other end is connected to **0** (ground).
+
+*   **Component C1:** This is a variable capacitor.
+    *   **Final Connections:**
+        *   One terminal is connected to the **n1** node.
+        *   The other terminal is connected to **0** (ground).
+
+*   **Component D1:** This is a diode.
+    *   **Final Connections:**
+        *   Its **anode** (flat side of triangle) is connected to the **n1** node.
+        *   Its **cathode** (bar side) is connected to the **n2** node.
+
+*   **Component C2:** This is a capacitor.
+    *   **Final Connections:**
+        *   One plate is connected to the **n2** node.
+        *   The other plate is connected to the **n3** node.
+
+*   **Component R1:** This is a resistor.
+    *   **Final Connections:**
+        *   One end is connected to the **n3** node.
+        *   The other end is connected to the **Vcc** node.
+
+*   **Component Q1:** This is an NPN Bipolar Junction Transistor (BJT).
+    *   **Analysis:**
+        *   Pin identification logic: The symbol has a flat bar for the Base. Two legs extend from the bar. The leg with the outward-pointing arrow is the Emitter. The remaining leg is the Collector.
+        *   Pin Mapping: For Q1, the Base is the left pin, the Emitter is the bottom pin (with arrow), and the Collector is the top pin.
+    *   **Final Connections:**
+        *   Its **base** is connected to the **n3** node.
+        *   Its **emitter** is connected to **0** (ground).
+        *   Its **collector** is connected to the **n4** node.
+
+*   **Component R2:** This is a variable resistor (potentiometer).
+    *   **Final Connections:**
+        *   The top terminal of the resistive element is connected to the **n4** node.
+        *   The bottom terminal of the resistive element and the wiper (arrow) are both connected to the **Vcc** node.
+
+*   **Component T1:** This is a transformer with an iron core.
+    *   **Final Connections:**
+        *   The top of the **primary winding** is connected to the **n4** node.
+        *   The bottom of the **primary winding** is connected to the **Vcc** node.
+        *   The top of the **secondary winding** is connected to the **n5** node.
+        *   The bottom of the **secondary winding** is connected to **0** (ground).
+
+*   **Component R3:** This is a resistor.
+    *   **Final Connections:**
+        *   One end is connected to the **Vcc** node.
+        *   The other end is connected to **0** (ground).
+
+*   **Component C3:** This is a polarized capacitor.
+    *   **Final Connections:**
+        *   Its negative terminal (curved plate) is connected to the **Vcc** node.
+        *   Its positive terminal (flat plate marked '+') is connected to **0** (ground).
+
+*   **Component Q2:** This is an NPN Bipolar Junction Transistor (BJT).
+    *   **Analysis:**
+        *   Pin identification logic: The leg with the outward-pointing arrow is the Emitter. The single pin on the flat side is the Base. The remaining pin is the Collector.
+        *   Pin Mapping: For Q2, the Base is the left pin, the Emitter is the bottom pin, and the Collector is the top pin.
+    *   **Final Connections:**
+        *   Its **base** is connected to the **n5** node.
+        *   Its **emitter** is connected to **0** (ground).
+        *   Its **collector** is connected to the **n6** node.
+
+*   **Component R4:** This is a resistor.
+    *   **Final Connections:**
+        *   One end is connected to the **n6** node.
+        *   The other end is connected to the **n7** node.
+
+*   **Component Headphones:** This is a headphone/earphone symbol (semicircle with terminals).
+    *   **Final Connections:**
+        *   One terminal is connected to the **n7** node.
+        *   The other terminal is connected to the **Vcc** node.

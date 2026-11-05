@@ -1,0 +1,2 @@
+M1 Vin CK Vout Vout NMOS
+C1 Vout 0 CH

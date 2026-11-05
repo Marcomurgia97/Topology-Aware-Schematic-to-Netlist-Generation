@@ -1,0 +1,30 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are Vin, Vout, VDD, and 0 (ground).
+All unlabeled nodes were checked against the labeled nets. The junction between the source of M2 and the source of M1 is connected to both Vin and VDD, so it is part of the existing labeled nets. No new distinct nets were identified.
+The final net inventory is: Vin, Vout, VDD, 0.
+
+**PHASE 2: Description of Components and Connections**
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side (gate) and two on the other (source and drain). The pin with an arrow is the source. The remaining pin is the drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: Gate is connected to Vin. Source is connected to 0 (ground). Drain is connected to Vout.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Vin' node.
+        - Its **source** and **bulk** are connected to 0 (ground).
+        - Its **drain** is connected to the 'Vout' node.
+- **Component M2:** This is a PMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side (gate) and two on the other (source and drain). The pin with an arrow is the source. The remaining pin is the drain.
+        - Pin Mapping: For M2, applying this logic, I have identified: Gate is connected to VDD. Source is connected to the node between Vin, RG, and M2 (part of both 'Vin' and 'VDD' nets). Drain is connected to Vout.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'VDD' node.
+        - Its **source** and **bulk** are connected to the node between Vin, RG, and M2 (which is part of both 'Vin' and 'VDD' nets).
+        - Its **drain** is connected to the 'Vout' node.
+- **Component RG:** This is a resistor.
+    - **Final Connections:**
+        - Its one terminal is connected to the 'Vin' node.
+        - Its other terminal is connected to 0 (ground).
+- **Component RD:** This is a resistor.
+    - **Final Connections:**
+        - Its one terminal is connected to the 'Vout' node.
+        - Its other terminal is connected to the 'VDD' node.<|end_of_box|>

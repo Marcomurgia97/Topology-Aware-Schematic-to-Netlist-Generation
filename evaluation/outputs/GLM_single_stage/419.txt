@@ -1,0 +1,7 @@
+M1 D1 V_in 0 0 NMOS
+M2 V_out V_b V_out V_out NMOS
+M3 V_out V_DD S3 S3 NMOS
+R1 V_b D1 VALUE
+R2 S3 D1 VALUE
+C1 D1 V_out VALUE
+C2 IN S3 VALUE

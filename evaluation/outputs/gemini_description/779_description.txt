@@ -1,0 +1,36 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    *   **CK:** The labeled net connected to the gate terminal of the transistor.
+    *   **Vout:** The labeled net connected to the output terminal and the top plate of the capacitor.
+    *   **0:** The ground net, indicated by the ground symbols connected to the left side of the transistor and the bottom of the capacitor.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   **Input Node:** The node connected to the left terminal of the transistor is labeled "$V_{in} = 0$" and terminates in a ground symbol. This confirms it is directly connected to the net **0**.
+    *   **Output Node:** The junction connecting the right terminal of the transistor and the top plate of the capacitor is clearly marked with a connection dot and the label **Vout**. This is part of the **Vout** net.
+
+3.  **Final Net Inventory:**
+    *   CK
+    *   Vout
+    *   0 (Ground)
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is a P-Channel MOSFET (PMOS) transistor.
+    -   **Analysis:**
+        -   **Pin identification logic:** The symbol is a standard three-terminal MOSFET. The Gate is the isolated terminal on one side. On the channel side, the Source is distinguished by the presence of an arrow on its terminal wire. The remaining terminal is the Drain.
+        -   **Pin Mapping:**
+            -   The arrow on the right-hand terminal points **inward** toward the channel, identifying this component as a **PMOS** transistor.
+            -   Therefore, the **Source** is the terminal on the right (with the arrow).
+            -   The **Drain** is the terminal on the left (without an arrow).
+            -   The **Gate** is the bottom terminal.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the 'CK' net.
+        -   Its **source** is connected to the 'Vout' net.
+        -   Its **drain** is connected to the '0' (ground) net.
+
+-   **Component CH:** This is a Capacitor.
+    -   **Analysis:** It connects the output node to ground. The annotations "$V_{DD}$", "+", and "-" next to it indicate the initial voltage condition across the capacitor, not a separate power supply connection.
+    -   **Final Connections:**
+        -   Its **top plate** is connected to the 'Vout' net.
+        -   Its **bottom plate** is connected to the '0' (ground) net.

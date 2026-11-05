@@ -1,0 +1,43 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+The primary labeled nets in the schematic are **VDD**, **X**, **Y**, and **0** (ground). 
+
+Upon inspection of the circuit for unlabeled nodes:
+1.  The node connecting the top plate of capacitor C1, the gate and drain of transistor M2, and the gate of transistor M1 is explicitly labeled as net **X**.
+2.  The node connecting the drain of transistor M1 and the bottom terminal of resistor R1 is explicitly labeled as net **Y**.
+3.  The top connection of resistor R1 is labeled **VDD**.
+4.  The bottom connections of capacitor C1, transistor M2, and transistor M1 are all connected to the ground symbol, designated as net **0**.
+
+No distinct unlabeled nodes were found that are not already covered by these labels.
+
+The final net inventory is: **VDD**, **X**, **Y**, **0**.
+
+**PHASE 2: Description of Components and Connections**
+
+*   **Component C1:** This is a capacitor.
+    *   **Final Connections:**
+        *   The **top plate** (marked with a positive polarity sign for V0) is connected to net **X**.
+        *   The **bottom plate** is connected to net **0**.
+
+*   **Component M2:** This is an NMOS transistor.
+    *   **Analysis:**
+        *   **Pin identification logic:** A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        *   **Pin Mapping:** For M2, applying this logic, the Gate is the isolated plate on the left. The Source is the bottom-right terminal with the outward-pointing arrow. The Drain is the top-right terminal.
+    *   **Final Connections:**
+        *   Its **gate** is connected to net **X**.
+        *   Its **drain** is connected to net **X**. (Note: The gate and drain are shorted together).
+        *   Its **source** is connected to net **0**.
+
+*   **Component M1:** This is an NMOS transistor.
+    *   **Analysis:**
+        *   **Pin identification logic:** A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        *   **Pin Mapping:** For M1, applying this logic, the Gate is the isolated plate on the left. The Source is the bottom-right terminal with the outward-pointing arrow. The Drain is the top-right terminal.
+    *   **Final Connections:**
+        *   Its **gate** is connected to net **X**.
+        *   Its **source** is connected to net **0**.
+        *   Its **drain** is connected to net **Y**.
+
+*   **Component R1:** This is a resistor.
+    *   **Final Connections:**
+        *   The **top terminal** is connected to net **VDD**.
+        *   The **bottom terminal** is connected to net **Y**.

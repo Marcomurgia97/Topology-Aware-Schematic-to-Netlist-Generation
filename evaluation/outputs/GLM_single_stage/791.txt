@@ -1,0 +1,5 @@
+C1 IN 0
+Cin IN 0
+C2 IN OUT
+CL OUT 0
+R1 OUT 0

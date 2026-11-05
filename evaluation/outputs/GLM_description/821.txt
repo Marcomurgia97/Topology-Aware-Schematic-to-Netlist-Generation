@@ -1,0 +1,27 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are VDD, Vout, and 0 (ground).
+Unlabeled nodes identified include E, F, and G. Each of these nodes is directly connected by a wire (with no components in between) to the VDD net (via resistors RD). Therefore, these nodes are part of the existing VDD net. No other unlabeled nodes exist that are not part of the existing labeled nets.
+The final net inventory is: VDD, Vout, 0.
+
+**PHASE 2: Description of Components and Connections**
+- **Component R1 (Resistor):**
+  - **Final Connections:** Connected between VDD and node E.
+- **Component M1 (MOSFET):**
+  - **Analysis:** Pin identification: The single pin on its own side (left) is the Gate. Of the two pins on the other side, the one with an arrow is the Source; the remaining pin is the Drain. For M1, applying this logic, the Gate is connected to 0, the Source is connected to 0, and the Drain is connected to node E.
+  - **Final Connections:** Its **gate** is connected to 0 (ground). Its **source** and **bulk** are connected to 0 (ground). Its **drain** is connected to VDD (via R1).
+- **Component C1 (Capacitor):**
+  - **Final Connections:** Connected between node E and 0 (ground).
+- **Component R2 (Resistor):**
+  - **Final Connections:** Connected between VDD and node F.
+- **Component M2 (MOSFET):**
+  - **Analysis:** Pin identification: The single pin on its own side (left) is the Gate. Of the two pins on the other side, the one with an arrow is the Source; the remaining pin is the Drain. For M2, applying this logic, the Gate is connected to node E, the Source is connected to 0, and the Drain is connected to node F.
+  - **Final Connections:** Its **gate** is connected to node E. Its **source** and **bulk** are connected to 0 (ground). Its **drain** is connected to VDD (via R2).
+- **Component C2 (Capacitor):**
+  - **Final Connections:** Connected between node F and 0 (ground).
+- **Component R3 (Resistor):**
+  - **Final Connections:** Connected between VDD and node G.
+- **Component M3 (MOSFET):**
+  - **Analysis:** Pin identification: The single pin on its own side (left) is the Gate. Of the two pins on the other side, the one with an arrow is the Source; the remaining pin is the Drain. For M3, applying this logic, the Gate is connected to node F, the Source is connected to 0, and the Drain is connected to node G.
+  - **Final Connections:** Its **gate** is connected to node F. Its **source** and **bulk** are connected to 0 (ground). Its **drain** is connected to VDD (via R3).
+- **Component C3 (Capacitor):**
+  - **Final Connections:** Connected between node G and 0 (ground).<|end_of_box|>

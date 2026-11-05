@@ -1,0 +1,57 @@
+<|begin_of_box|>**PHASE 1: Global Identification and Verification of Nets**
+The primary labeled nets are $v_{i1}$, $v_{i2}$, $v_{O1}$, $v_{O2}$, $V_{PP}$, and 0 (ground).
+Unlabeled nodes identified include:
+- The junction between resistor $R_G$ (left side) and resistor $R'_K$ (connecting to the left MOSFET source) – not connected to any labeled net, assigned new name n1.
+- The junction between resistor $R'_K$ and resistor $R_T$ – not connected to any labeled net, assigned new name n2.
+- The junction between resistor $R'_K$ (connecting to the right MOSFET source) and resistor $R_G$ (right side) – not connected to any labeled net, assigned new name n3.
+The final net inventory is: $v_{i1}$, $v_{i2}$, $v_{O1}$, $v_{O2}$, $V_{PP}$, 0, n1, n2, n3.
+
+**PHASE 2: Description of Components and Connections**
+- **Component C1:** This is a capacitor.
+    - **Final Connections:**
+        - Its one terminal is connected to the $v_{i1}$ net.
+        - Its other terminal is connected to the gate of the left MOSFET (part of the $v_{i1}$ net).
+- **Component R1:** This is a resistor (labeled $R_G$ on the left side).
+    - **Final Connections:**
+        - One terminal is connected to the gate of the left MOSFET (part of the $v_{i1}$ net).
+        - The other terminal is connected to n1 (source of the left MOSFET).
+- **Component M1:** This is a MOSFET.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: Gate is connected to the $v_{i1}$ net. Source is connected to n1. Drain is connected to the $v_{O1}$ net.
+    - **Final Connections:**
+        - Its **gate** is connected to the $v_{i1}$ net.
+        - Its **source** is connected to n1.
+        - Its **drain** is connected to the $v_{O1}$ net.
+- **Component R2:** This is a resistor (labeled $R_{L1}$).
+    - **Final Connections:**
+        - One terminal is connected to the drain of M1 (part of the $v_{O1}$ net).
+        - The other terminal is connected to the $V_{PP}$ net.
+- **Component C2:** This is a capacitor.
+    - **Final Connections:**
+        - Its one terminal is connected to the $v_{O2}$ net.
+        - Its other terminal is connected to the $v_{i2}$ net.
+- **Component R3:** This is a resistor (labeled $R_G$ on the right side).
+    - **Final Connections:**
+        - One terminal is connected to the gate of the right MOSFET (part of the $v_{i2}$ net).
+        - The other terminal is connected to n3 (source of the right MOSFET).
+- **Component M2:** This is a MOSFET.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M2, applying this logic, I have identified: Gate is connected to the $v_{i2}$ net. Source is connected to n3. Drain is connected to the $v_{O2}$ net.
+    - **Final Connections:**
+        - Its **gate** is connected to the $v_{i2}$ net.
+        - Its **source** is connected to n3.
+        - Its **drain** is connected to the $v_{O2}$ net.
+- **Component R4:** This is a resistor (labeled $R_{L2}$).
+    - **Final Connections:**
+        - One terminal is connected to the drain of M2 (part of the $v_{O2}$ net).
+        - The other terminal is connected to the $V_{PP}$ net.
+- **Component R5:** This is a resistor (labeled $R'_K$).
+    - **Final Connections:**
+        - One terminal is connected to n1 (source of the left MOSFET).
+        - The other terminal is connected to n3 (source of the right MOSFET).
+- **Component R6:** This is a resistor (labeled $R_T$).
+    - **Final Connections:**
+        - One terminal is connected to n2 (middle node between $R'_K$ and $R_T$).
+        - The other terminal is connected to 0 (ground).<|end_of_box|>

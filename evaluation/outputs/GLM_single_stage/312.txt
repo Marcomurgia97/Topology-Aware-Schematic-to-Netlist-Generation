@@ -1,0 +1,7 @@
+R1 Vin X VALUE
+Cin Vin X VALUE
+R_S X 0 VALUE
+M1 Vout X 0 0 NMOS
+M_B VDD Vout 0 0 PMOS
+R_D Vout VDD VALUE
+R_B 0 MB_src VALUE

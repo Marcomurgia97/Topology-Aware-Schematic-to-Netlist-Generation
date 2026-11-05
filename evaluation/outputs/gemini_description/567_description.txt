@@ -1,0 +1,56 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+The primary labeled nets in the schematic are **VDD**, **VF**, and **0** (ground).
+Three important unlabeled nodes were identified. Their verification against the labeled nets is as follows:
+1.  A node connecting the source of transistor M1, one end of resistor R1, and one end of resistor R2. A check confirms this node is not directly connected to any labeled net. It is assigned the new name **n1**.
+2.  A node connecting the drain of transistor M2, one end of resistor RD2, and one end of resistor R1. A check confirms this node is not directly connected to any labeled net. It is assigned the new name **n2**.
+3.  A node connecting the positive terminal of the voltage source Vt and the gate of transistor M2. A check confirms this node is not directly connected to any labeled net. It is assigned the new name **n3**.
+
+The final net inventory is: **VDD**, **VF**, **0**, **n1**, **n2**, **n3**.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Resistor RD1**
+    - **Final Connections:**
+        - One terminal is connected to the **VDD** net.
+        - The other terminal is connected to the **VF** net.
+
+- **Resistor RD2**
+    - **Final Connections:**
+        - One terminal is connected to the **VDD** net.
+        - The other terminal is connected to the **n2** net.
+
+- **Resistor R1**
+    - **Final Connections:**
+        - One terminal is connected to the **n1** net.
+        - The other terminal is connected to the **n2** net. (Note: The wire connecting to n2 crosses the gate and source connections of M2 without dots, indicating no electrical connection at those crossing points).
+
+- **Resistor R2**
+    - **Final Connections:**
+        - One terminal is connected to the **n1** net.
+        - The other terminal is connected to **0** (ground).
+
+- **Voltage Source Vt**
+    - **Final Connections:**
+        - The positive terminal is connected to the **n3** net.
+        - The negative terminal is connected to **0** (ground).
+
+- **Component M1**
+    - This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, the Gate is the single pin on the left. The Source is the bottom pin with the outward-pointing arrow. The Drain is the top pin without an arrow.
+    - **Final Connections:**
+        - Its **gate** is connected to **0** (ground).
+        - Its **source** is connected to the **n1** net.
+        - Its **drain** is connected to the **VF** net.
+
+- **Component M2**
+    - This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M2, the Gate is the single pin on the left. The Source is the bottom pin with the outward-pointing arrow. The Drain is the top pin without an arrow.
+    - **Final Connections:**
+        - Its **gate** is connected to the **n3** net.
+        - Its **source** is connected to **0** (ground).
+        - Its **drain** is connected to the **n2** net.

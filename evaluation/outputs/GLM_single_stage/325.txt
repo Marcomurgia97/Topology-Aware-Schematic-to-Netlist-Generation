@@ -1,0 +1,9 @@
+R1 V_DD X 1k
+R1 V_DD Y 1k
+R2 Y 0 1k
+M1 Y G2 0 NMOS
+M2 G2 X 0 NMOS<|end_of_box|>R1 V_DD X 1k
+R1 V_DD Y 1k
+R2 Y 0 1k
+M1 Y G2 0 NMOS
+M2 G2 X 0 NMOS

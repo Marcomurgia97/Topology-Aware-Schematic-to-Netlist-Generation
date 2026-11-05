@@ -1,0 +1,8 @@
+C_L Vout1 0
+R_D Vout1 0
+C_GD5 Vout1 n1
+M5 VDD n1 Vout1 Vout1 NMOS
+1/gm3 VDD n1
+C n1 VDD
+R_S Vin1 gate_M1
+M1 n1 Vin1 0 0 NMOS

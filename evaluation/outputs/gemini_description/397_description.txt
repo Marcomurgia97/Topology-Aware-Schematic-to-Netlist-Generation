@@ -1,0 +1,62 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    *   The primary labeled nets in the schematic are **VDD**, **Vin**, **Vout**, **Vb**, and **VX**.
+    *   The ground symbols indicate the ground net, which is assigned the name **0**.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    *   The node connecting the drain of M1, the drain of M2, the gate of M3, and the top plate of the first capacitor $C_L$ is explicitly labeled as **VX**. Therefore, it is part of the labeled net **VX**.
+    *   The node connecting the drain of M3, the drain of M4, the top plate of the second capacitor $C_L$, and the output terminal is explicitly labeled as **Vout**. Therefore, it is part of the labeled net **Vout**.
+    *   The node connecting the gates of M2 and M4 is connected directly to the terminal labeled **Vb**. Therefore, it is part of the labeled net **Vb**.
+    *   No distinct unlabeled nodes were found that are not already covered by the existing labels.
+
+3.  **Final Net Inventory:**
+    The final verified net inventory is: **VDD, Vin, Vout, Vb, VX, 0**.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   **Pin identification logic:** A MOSFET symbol has one pin on one side (Gate) and two on the other (Source and Drain). The Gate is the single pin on its own side. The Source is the pin on the channel side marked with an arrow. The Drain is the remaining pin.
+        -   **Pin Mapping:** For M1, the Gate is on the left connected to Vin. The Source is the bottom pin with the arrow pointing out, connected to ground. The Drain is the top pin connected to the intermediate node VX.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the **Vin** net.
+        -   Its **source** is connected to the **0** (ground) net.
+        -   Its **drain** is connected to the **VX** net.
+
+-   **Component M2:** This is a PMOS transistor (identified by the bubble on the gate).
+    -   **Analysis:**
+        -   **Pin identification logic:** The single pin with the bubble is the Gate. The pin on the channel side with the arrow is the Source. The remaining pin is the Drain.
+        -   **Pin Mapping:** For M2, the Gate is connected to Vb. The Source is the top pin (with arrow), connected to the supply rail. The Drain is the bottom pin connected to the intermediate node VX.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the **Vb** net.
+        -   Its **source** is connected to the **VDD** net.
+        -   Its **drain** is connected to the **VX** net.
+
+-   **Component CL (First Capacitor):** This is a capacitor located at the intermediate node.
+    -   **Final Connections:**
+        -   One plate is connected to the **VX** net.
+        -   The other plate is connected to the **0** (ground) net.
+
+-   **Component M3:** This is an NMOS transistor.
+    -   **Analysis:**
+        -   **Pin identification logic:** The single pin is the Gate. The pin with the arrow is the Source. The remaining pin is the Drain.
+        -   **Pin Mapping:** For M3, the Gate is connected to the intermediate node VX. The Source is the bottom pin with the arrow, connected to ground. The Drain is the top pin connected to the output node Vout.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the **VX** net.
+        -   Its **source** is connected to the **0** (ground) net.
+        -   Its **drain** is connected to the **Vout** net.
+
+-   **Component M4:** This is a PMOS transistor (identified by the bubble on the gate).
+    -   **Analysis:**
+        -   **Pin identification logic:** The single pin with the bubble is the Gate. The pin with the arrow is the Source. The remaining pin is the Drain.
+        -   **Pin Mapping:** For M4, the Gate is connected to Vb. The Source is the top pin, connected to the supply rail. The Drain is the bottom pin connected to the output node Vout.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the **Vb** net.
+        -   Its **source** is connected to the **VDD** net.
+        -   Its **drain** is connected to the **Vout** net.
+
+-   **Component CL (Second Capacitor):** This is a capacitor located at the output node.
+    -   **Final Connections:**
+        -   One plate is connected to the **Vout** net.
+        -   The other plate is connected to the **0** (ground) net.

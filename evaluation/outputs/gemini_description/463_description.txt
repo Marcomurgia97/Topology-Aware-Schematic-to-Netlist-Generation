@@ -1,0 +1,33 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+The primary labeled nets in the schematic are VDD, Vin, Vout, and 0 (ground).
+
+Next, I examined the unlabeled nodes to see if any distinct nets exist:
+- The central junction connecting the drain of transistor M1, the bottom terminal of resistor RD, and the top plate of capacitor CL is directly connected to the output terminal labeled Vout. Therefore, this entire node is identified as the 'Vout' net.
+- The node at the source of transistor M1 is connected to a ground symbol. This confirms it is part of net '0'.
+- The node at the bottom plate of capacitor CL is connected to a ground symbol. This confirms it is part of net '0'.
+- The top terminal of resistor RD is connected directly to the label VDD.
+- The gate of transistor M1 is connected directly to the label Vin.
+
+Checking for any remaining isolated wires confirms there are no other distinct nodes. The final net inventory is: VDD, Vin, Vout, 0.
+
+**PHASE 2: Description of Components and Connections**
+
+- **Component M1:** This is an NMOS transistor.
+    - **Analysis:**
+        - Pin identification logic: A MOSFET symbol has one pin on one side and two on the other. The single pin on its own side is the Gate. Of the two pins on the other side, the one with an arrow is the Source. The remaining pin is the Drain.
+        - Pin Mapping: For M1, applying this logic, I have identified: The Gate is the single pin on the left connected to the input. The Source is the bottom-right pin featuring the outward-pointing arrow. The Drain is the top-right pin without an arrow.
+    - **Final Connections:**
+        - Its **gate** is connected to the 'Vin' net.
+        - Its **source** is connected to the '0' (ground) net.
+        - Its **drain** is connected to the 'Vout' net.
+
+- **Component RD:** This is a resistor.
+    - **Final Connections:**
+        - One terminal (top) is connected to the 'VDD' net.
+        - The other terminal (bottom) is connected to the 'Vout' net.
+
+- **Component CL:** This is a capacitor.
+    - **Final Connections:**
+        - One terminal (top plate) is connected to the 'Vout' net.
+        - The other terminal (bottom plate) is connected to the '0' (ground) net.

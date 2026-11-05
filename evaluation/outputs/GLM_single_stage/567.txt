@@ -1,0 +1,6 @@
+M1 V_F 0 N2 PMOS
+R_D1 V_DD V_F R_D1
+R2 N2 0 R2
+R1 N2 Vt_node R1
+M2 N3 Vt_node 0 NMOS
+R_D2 V_DD N3 R_D2

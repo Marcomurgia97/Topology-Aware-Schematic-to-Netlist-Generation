@@ -1,0 +1,4 @@
+M2 Vout Vin VDD VDD PMOS
+M1 Vout Vin n1 n1 NMOS
+RF Vout n1 VALUE
+RS n1 0 VALUE

@@ -1,0 +1,12 @@
+L1 n1 0 VALUE
+C1 n1 0 VALUE
+D1 n1 n2
+C2 n2 n3 VALUE
+R1 n3 Vcc VALUE
+Q1 n4 n3 0 NPN
+R2 n4 Vcc VALUE
+R3 Vcc 0 VALUE
+C3 Vcc 0
+Q2 n6 n5 0 NPN
+R4 n6 n7 VALUE
+R_headphones n7 Vcc VALUE

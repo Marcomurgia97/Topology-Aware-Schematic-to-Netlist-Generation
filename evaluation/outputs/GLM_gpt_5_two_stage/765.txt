@@ -1,0 +1,6 @@
+M1 n1 n1 0 0 NMOS
+M2 n2 n2 n2 n2 PMOS
+M3 n2 n1 VDD VDD NMOS
+M4 VDD n1 n1 n1 NMOS
+M5 n2 n2 n1 n1 NMOS
+Rs n2 0 VALUE

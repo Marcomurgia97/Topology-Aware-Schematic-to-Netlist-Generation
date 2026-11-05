@@ -1,0 +1,4 @@
+L n1 Net_Top_Terminal VALUE
+R1 n1 Net_Top_Terminal VALUE
+R2 n1 Net_Bottom_Terminal VALUE
+Z1 Net_Top_Terminal Net_Bottom_Terminal VALUE

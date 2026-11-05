@@ -1,0 +1,2 @@
+M1 Vout Vin 0 0 NMOS
+R1 VDD Vout 1k

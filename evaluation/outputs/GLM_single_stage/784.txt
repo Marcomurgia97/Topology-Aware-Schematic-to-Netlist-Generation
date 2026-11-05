@@ -1,0 +1,2 @@
+R1 Vin Vout R_on
+C1 Vout 0 C_H

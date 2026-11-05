@@ -1,0 +1,50 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:**
+    -   **VDD**: The positive power supply rail at the top.
+    -   **X**: The node labeled on the left branch.
+    -   **Y**: The node labeled on the right branch.
+    -   **0**: The ground reference, indicated by three ground symbols at the bottom.
+
+2.  **Identify and Verify Unlabeled Nodes:**
+    -   **Gate/Bias Node:** There is a node connecting the Gate of transistor M2, the Gate of transistor M1, and the top of resistor R2. A visible wire with a connection dot links this junction directly to the node labeled **X** (which is also the Drain of M2). Therefore, this entire interconnected region (Drain M2, Gate M2, Gate M1, Top R2, Bottom Left R1) is a single electrical point. It is identified as net **X**.
+    -   **Ground Connections:** The Source of M2, the Source of M1, and the bottom of R2 each connect directly to ground symbols. These are all part of net **0**.
+    -   **Right Branch Node:** The connection between the Right R1 and the Drain of M1 is labeled **Y**.
+
+3.  **Final Net Inventory:**
+    -   VDD, X, Y, 0.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Resistor R1 (Left Instance):** This is the resistor located in the left-hand vertical branch.
+    -   **Final Connections:**
+        -   One terminal is connected to the **VDD** net.
+        -   The other terminal is connected to the **X** net.
+
+-   **Resistor R1 (Right Instance):** This is the resistor located in the right-hand vertical branch.
+    -   **Final Connections:**
+        -   One terminal is connected to the **VDD** net.
+        -   The other terminal is connected to the **Y** net.
+
+-   **Resistor R2:** This is the resistor located in the center, below the gate connections.
+    -   **Final Connections:**
+        -   The top terminal is connected to the **X** net (at the junction of the transistor gates).
+        -   The bottom terminal is connected to the **0** (ground) net.
+
+-   **Transistor M2:** This is an NMOS transistor located on the left side.
+    -   **Analysis:**
+        -   **Pin Identification Logic:** The symbol is oriented with the Gate facing inwards to the right. The single pin on the right side is the **Gate**. On the left side, there are two pins: the bottom pin has an arrow pointing outward, identifying it as the **Source**. The remaining top pin on the left is the **Drain**.
+        -   **Pin Mapping:** Based on the schematic lines, the Gate connects to the central wire (net X). The Source connects to ground (net 0). The Drain connects to the node X.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the **X** net.
+        -   Its **source** is connected to the **0** net.
+        -   Its **drain** is connected to the **X** net (effectively diode-connecting the transistor).
+
+-   **Transistor M1:** This is an NMOS transistor located on the right side.
+    -   **Analysis:**
+        -   **Pin Identification Logic:** The symbol is oriented with the Gate facing inwards to the left. The single pin on the left side is the **Gate**. On the right side, there are two pins: the bottom pin has an arrow pointing outward, identifying it as the **Source**. The remaining top pin on the right is the **Drain**.
+        -   **Pin Mapping:** The Gate connects to the central wire (net X). The Source connects to ground (net 0). The Drain connects to the node Y.
+    -   **Final Connections:**
+        -   Its **gate** is connected to the **X** net.
+        -   Its **source** is connected to the **0** net.
+        -   Its **drain** is connected to the **Y** net.

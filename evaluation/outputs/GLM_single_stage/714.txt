@@ -1,0 +1,7 @@
+M1 A V_in X X NMOS
+M2 A V_in Y Y NMOS
+M3 B 0 X X NMOS
+M4 B 0 0 0 NMOS
+M5 V_out Y 0 0 NMOS
+M6 V_out V_DD A V_DD NMOS
+M7 V_DD V_b A A NMOS

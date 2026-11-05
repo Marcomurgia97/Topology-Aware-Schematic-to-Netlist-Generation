@@ -1,0 +1,28 @@
+**PHASE 1: Global Identification and Verification of Nets**
+
+1.  **List Labeled Nets:** The schematic contains the following explicitly labeled nets: `Vin`, `Vout`, `VDD`, and `0` (representing the ground symbol).
+2.  **Identify and Verify Unlabeled Nodes:** There is one significant three-way junction connecting the resistor `RD`, the transistor `M1`, and the amplifier `A1`.
+    -   **Verification Check:** Is this node directly connected to `Vin`, `Vout`, `VDD`, or `0`? No. The resistor `RD` separates it from `VDD`. The transistor `M1` separates it from `0` and `Vin`. The amplifier `A1` separates it from `Vout`.
+    -   Since this is an electrically distinct point, it is assigned the new unique name `n1`.
+3.  **Final Inventory:** The complete list of verified nets for this circuit is: `Vin`, `Vout`, `VDD`, `0`, and `n1`.
+
+**PHASE 2: Description of Components and Connections**
+
+-   **Component M1:** This is an N-channel MOSFET (NMOS).
+    -   **Analysis:**
+        -   **Pin identification logic:** The MOSFET symbol has a single pin on the left side and two pins on the right side. The single pin on the left is the **Gate**. On the right side, the bottom pin features an arrow pointing outward, identifying it as the **Source**. The remaining top pin on the right is the **Drain**.
+        -   **Pin Mapping:** Applying this logic to the schematic, the Gate is connected to the input wire. The Source is connected to the ground symbol. The Drain is connected to the central junction.
+    -   **Final Connections:**
+        -   The **Gate** is connected to the `Vin` net.
+        -   The **Source** is connected to the `0` (ground) net.
+        -   The **Drain** is connected to the `n1` net.
+
+-   **Component RD:** This is a Resistor.
+    -   **Final Connections:**
+        -   One terminal is connected to the `VDD` net.
+        -   The other terminal is connected to the `n1` net.
+
+-   **Component A1:** This is an Amplifier (represented by a triangle symbol).
+    -   **Final Connections:**
+        -   The **input** terminal (the flat vertical side of the triangle) is connected to the `n1` net.
+        -   The **output** terminal (the pointed side of the triangle) is connected to the `Vout` net.
