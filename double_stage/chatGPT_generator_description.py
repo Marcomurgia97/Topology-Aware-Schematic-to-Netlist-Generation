@@ -1,9 +1,10 @@
 import base64, os
 from openai import OpenAI
 
-model = ''
+model = 'gemini'  # name of the Phase 1 VLM: subfolder of descriptions/
 descr_directory = f'''descriptions/{model}'''
 output_directory = f'''../output_{model}_gpt_5_two_stage'''
+os.makedirs(output_directory, exist_ok=True)
 
 client = OpenAI(api_key=os.environ['OPEN_API_KEY'])
 

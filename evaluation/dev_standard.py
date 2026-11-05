@@ -70,48 +70,49 @@ def generate_summary(dataframe):
             "GED (Mean)": round(mean_ged, 2),
             "Perfect Matches": f"{perfect_matches}/{total_circuits}"
         })
-    return pd.DataFrame(summary).sort_values(by="NGED (%)")
+    # Sort numerically: the column holds formatted strings such as "4.20%"
+    return pd.DataFrame(summary).sort_values(by="NGED (%)", key=lambda col: col.str.rstrip("%").astype(float))
 
 
 print("=" * 80)
-print(f"=== STATISTICHE INIZIALI GREZZE (Su {len(df)} circuiti totali) ===")
+print(f"=== RAW STATISTICS (on {len(df)} circuits) ===")
 print("=" * 80)
 
 if len(df) > 50:
-    print("ATTENZIONE: Il numero di circuiti è ancora superiore a 50. Ci sono ancora nomi disallineati.")
-    print("Circuiti trovati:", list(df.index))
+    print("WARNING: more than 50 circuits found. Some file names are still misaligned.")
+    print("Circuits found:", list(df.index))
     print("-" * 80)
 
 summary_raw = generate_summary(df)
 print(summary_raw.to_string(index=False))
 
 outlier_mask = pd.Series(False, index=df.index)
-soglia_sigma = 3
+sigma_threshold = 3
 
 for col in sim_cols:
     z_score = (df[col] - df[col].mean()) / df[col].std()
-    outlier_mask = outlier_mask | (z_score.abs() > soglia_sigma)
+    outlier_mask = outlier_mask | (z_score.abs() > sigma_threshold)
 
 outliers = df[outlier_mask]
 
 print("\n" + "=" * 80)
-print(f"=== OUTLIER TROVATI (Rimossi da tutti i modelli per equità) ===")
+print(f"=== OUTLIERS FOUND (removed from all models for fairness) ===")
 print("=" * 80)
 if not outliers.empty:
-    print(f"Trovati {len(outliers)} circuiti anomali: {list(outliers.index)}")
+    print(f"Found {len(outliers)} outlier circuits: {list(outliers.index)}")
 else:
-    print("Nessun outlier statistico trovato.")
+    print("No statistical outliers found.")
 
 df_clean = df[~outlier_mask]
 
 print("\n" + "=" * 80)
-print(f"=== STATISTICHE DOPO PULIZIA OUTLIER (Su {len(df_clean)} circuiti) ===")
+print(f"=== STATISTICS AFTER OUTLIER REMOVAL (on {len(df_clean)} circuits) ===")
 print("=" * 80)
 summary_clean = generate_summary(df_clean)
 print(summary_clean.to_string(index=False))
 
 print("\n" + "=" * 80)
-print("=== LEADERBOARD FINALE (Basata su NGED / Errore Topologico Normalizzato) ===")
+print("=== FINAL LEADERBOARD (by NGED / normalized topological error) ===")
 print("=" * 80)
 for i, row in enumerate(summary_clean.itertuples(), 1):
-    print(f"{i}. {row.Model:<15} -> NGED: {row._4:<7} | SIM Std: {row._3:<7} | Match Perfetti: {row._6}")
+    print(f"{i}. {row.Model:<15} -> NGED: {row._4:<7} | SIM Std: {row._3:<7} | Perfect matches: {row._6}")

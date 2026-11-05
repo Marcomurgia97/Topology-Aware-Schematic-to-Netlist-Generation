@@ -1,11 +1,12 @@
 import json
 import os
+import math
 import numpy as np
 from evaluation_graph import NetlistParser, NetlistGEDComparator
 
 entity = 'GLM_gpt_5_two_stage' #example
 path = 'outputs/GLM_gpt_5_two_stage'
-gold_dir = '../../annotated_dataset/netlists'
+gold_dir = '../annotated_dataset/netlists'
 results = {}
 
 for file in os.scandir(path):
@@ -27,9 +28,13 @@ for file in os.scandir(path):
 
         comparator = NetlistGEDComparator(g_golden, g_gen)
         comparator.compare()
-        report, ged = comparator.get_report()
+        report, ged, sim = comparator.get_report()
 
-        results[filename_no_ext] = {'GED': int(ged), 'report':report}
+        results[filename_no_ext] = {
+            'GED': int(ged) if math.isfinite(ged) else None,  # None if the GED computation failed
+            'report': report,
+            'sim': sim,
+        }
 
 if results:
     with open(f'results/{entity}.json', 'w', encoding='utf-8') as f:

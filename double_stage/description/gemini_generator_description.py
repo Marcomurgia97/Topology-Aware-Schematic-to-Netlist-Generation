@@ -1,8 +1,9 @@
 from google import genai
 from google.genai import types
 import os
-image_directory = "../annotated_dataset/images"
-output_directory = "../output_gemini_description"
+image_directory = "../../annotated_dataset/images"
+output_directory = "../descriptions/gemini"
+os.makedirs(output_directory, exist_ok=True)
 
 client = genai.Client(api_key=os.environ['GEMINI_API_KEY'])
 
@@ -100,7 +101,7 @@ for filename in os.listdir(image_directory):
         output_filename = f"{base_filename}.txt"
         output_path = os.path.join(output_directory, output_filename)
 
-ù        with open(output_path, 'w', encoding='utf-8') as f:
+        with open(output_path, 'w', encoding='utf-8') as f:
             f.write(response.text)
 
         print(f"Response saved to: {output_path}\n")

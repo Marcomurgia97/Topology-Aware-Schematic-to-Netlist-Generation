@@ -3,6 +3,7 @@ from google.genai import types
 import os
 image_directory = "../annotated_dataset/images"
 output_directory = "../output_gemini_netlist"
+os.makedirs(output_directory, exist_ok=True)
 
 client = genai.Client(api_key=os.environ['GEMINI_API_KEY'])
 
@@ -116,7 +117,7 @@ Now, analyze the following image and generate the SPICE netlist by STRICTLY foll
 
 
 for filename in os.listdir(image_directory):
-    # Controlla se il file è un'immagine comune (puoi aggiungere altre estensioni se necessario)
+    # Only process common image formats (add more extensions if needed)
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
         # Path to your image
         image_path = f'{image_directory}/{filename}'

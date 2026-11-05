@@ -4,6 +4,7 @@ from openai import OpenAI
 
 image_directory = "../annotated_dataset/images"
 output_directory = "../output_gpt_5_single_stage"
+os.makedirs(output_directory, exist_ok=True)
 
 client = OpenAI(api_key=os.environ['OPEN_API_KEY'])
 
